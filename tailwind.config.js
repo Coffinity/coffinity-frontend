@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
+        footerTexture: "url('src/assets/footerBackground.png')",
         header: 'url("src/assets/Header.jpg")',
       },
       fontFamily: {
