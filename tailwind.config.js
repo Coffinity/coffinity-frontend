@@ -2,7 +2,15 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        kanit: ['Chonburi', 'serif'],
+      },
+    },
   },
   plugins: [require('daisyui')],
+  // extend: {},
+  // daisyui: {
+  //   themes: ['light'],
+  // },
 }
