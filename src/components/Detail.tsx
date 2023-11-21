@@ -28,7 +28,7 @@ export default function Detail() {
               <br />
               drink coffee.
             </div>
-            <div>
+            <div className="">
               <Carousel images={images} />
             </div>
           </div>
