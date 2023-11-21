@@ -6,11 +6,7 @@ const Equipment = () => {
       <div className="flex justify-center bg-[#D5D5D5]">
         <img src="../src/assets/equipmentsBanner.png" className="w-1/2" />
       </div>
-      <div className="grid grid-cols-4 ">
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
+      <div className="flex w-4/5 mx-auto">
         <CardProduct />
         <CardProduct />
         <CardProduct />
