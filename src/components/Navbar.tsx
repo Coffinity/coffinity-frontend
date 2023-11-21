@@ -3,7 +3,7 @@ import LocalMallIcon from '@mui/icons-material/LocalMall'
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar w-full z-50  fixed bg-black text-neutral-content bg-opacity-50 justify-between">
+      <div className="navbar w-full z-50 fixed bg-black text-neutral-content bg-opacity-50 justify-between">
         <div className="flex">
           <h1 className="text-white m-5 font-kanit text-4xl">ดัมมะชาติ</h1>
           <div className="flex py-10 mt-13">
