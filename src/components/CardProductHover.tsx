@@ -1,13 +1,26 @@
 import { useState } from 'react'
 
-const CardProduct = () => {
+const CardProductHover = () => {
   const [quantityProduct, setQuantityProduct] = useState<number>(1)
 
   return (
     <div className="relative m-10 flex w-full h-max max-w-xs flex-col overflow-hidden rounded-lg bg-transparent shadow-[0_0_50px_0 rgb(0 0 0 / 0.1)">
-      <a className="flex rounded-xl items-center" href="#">
-        <img className="" src="src/assets/Test Product.png" alt="product image" />
-      </a>
+      <div className="w-72 group">
+        <a className="flex flex-cols rounded-xl items-center" href="#">
+          <img className="" src="src/assets/Test Product.png" alt="product image" />
+        </a>
+        <div className="absolute w-full bg-black/80 flex flex-col items-center justify-center top-0 h-[270px] rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <h1 className="font-bold text-white text-lg">BALANCE</h1>
+          <br />
+          <h3 className="font-semibold text-white">Now Blending :</h3>
+          <p className="text-white text-sm">- Brazil Cerrado Natural</p>
+          <p className="text-white text-sm">- Thailand AJA Coffee Farm Washed</p>
+          <br />
+          <h3 className="font-semibold text-white">Recommend for :</h3>
+          <p className="text-white text-sm">Espresso & Milk Based Drinks</p>
+        </div>
+      </div>
+
       <div className="mt-4 px-5 pb-5 flex flex-col text-center">
         <a href="#">
           <h5 className="text-xl font-bold tracking-tight text-slate-900">Dhamajati Balance (200g)</h5>
@@ -53,4 +66,4 @@ const CardProduct = () => {
   )
 }
 
-export default CardProduct
+export default CardProductHover
