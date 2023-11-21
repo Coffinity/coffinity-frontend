@@ -1,3 +1,11 @@
+import Detail from '../components/Detail'
+import Header from '../components/Header'
+
 export const Home = () => {
-  return <div></div>
+  return (
+    <div>
+      <Header />
+      <Detail />
+    </div>
+  )
 }
