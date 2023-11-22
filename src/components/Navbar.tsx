@@ -17,7 +17,7 @@ const Navbar = () => {
           <div className="flex gap-10 items-start  ">
             <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
             {/* <SearchIcon fontSize="large" className="text-white large " /> */}
-            <LocalMallIcon sx={{ fontSize: 40 }} className="text-black text-5xl item-center" />
+            <LocalMallIcon sx={{ fontSize: 40 }} className="text-white text-5xl item-center" />
           </div>
           <div className="flex">
             <p className="text-white mx-10">REGISTER</p>
