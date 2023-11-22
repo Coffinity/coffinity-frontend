@@ -15,13 +15,13 @@ export default function Detail() {
   ]
   return (
     <div className="">
-      <div className="">
+      <div className="grid justify-items-center">
         <img src="src/assets/Header2.png" />
       </div>
 
       <div className="flex flex-col gap-y-[152px]">
         <div className="flex flex-col items-center">
-          <div className="flex w-full justify-between max-w-[1020px]    ">
+          <div className="flex w-full justify-between items-center max-w-[1020px]    ">
             <div className="h-[320px] text-center text-black text-3xl font-bold italic place-items-center flex items-center">
               The purpose of our lives
               <br /> is wake up to
@@ -34,7 +34,7 @@ export default function Detail() {
           </div>
         </div>
         <div className="flex flex-col items-center">
-          <div className="flex w-full justify-between max-w-[1020px]">
+          <div className="flex w-full justify-between items-center max-w-[1020px]">
             <img src="src/assets/Brew.png" className="w-[450px] h-[450px] place-items-center flex items-center" />
             <div className="flex flex-col">
               <div className="text-stone-600 text-[30px] font-bold  tracking-[9.60px] place-items-center ">
