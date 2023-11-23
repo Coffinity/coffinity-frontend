@@ -10,8 +10,9 @@ const Footer = () => {
         <div className="w-1/2">
           <img src="../src/assets/logo.png" className="mx-auto h-64 w-64" />
         </div>
-
-        <div className="w-0 h-[270px] border-solid border-white border-[1px]"></div>
+        <div className="flex items-center">
+          <div className="w-0 h-[270px] border-solid border-white border-[1px]"></div>
+        </div>
 
         <div className="w-1/2">
           <h1 className="pl-20 text-3xl mb-5 font-semibold text-white">CONTACT US</h1>
