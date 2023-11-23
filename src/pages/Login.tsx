@@ -31,7 +31,7 @@ export default function Login() {
           <input
             type="text"
             onChange={(e) => setUsername(e.target.value)}
-            placeholder="Info@example.com"
+            placeholder="Username"
             className="mt-2 h-12 w-full rounded-md bg-gray-100 px-3 outline-none focus:ring"
           />
 
