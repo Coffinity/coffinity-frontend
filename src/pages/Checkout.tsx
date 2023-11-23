@@ -1,6 +1,6 @@
 export const Checkout = () => {
   return (
-    <div className="h-screen flex flex-col items-center">
+    <div className="h-screen pt-24 bg-allPageBg bg-cover bg-center bg-no-repeat flex flex-col items-center">
       <div className="flex mb-8 mt-11">
         <h1 className="text-5xl text-white font-bold">CHECK OUT</h1>
       </div>

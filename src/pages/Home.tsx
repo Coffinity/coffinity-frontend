@@ -1,6 +1,7 @@
 import CoffeeBeans from '../components/CoffeeBeans'
 import Detail from '../components/Detail'
 import Equipment from '../components/Equipment'
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 
 export const Home = () => {
@@ -10,6 +11,7 @@ export const Home = () => {
       <Detail />
       <CoffeeBeans />
       <Equipment />
+      <Footer />
     </div>
   )
 }
