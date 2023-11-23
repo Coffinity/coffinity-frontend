@@ -6,6 +6,7 @@ export default {
       backgroundImage: {
         footerTexture: "url('src/assets/footerBackground.png')",
         header: 'url("src/assets/Header.jpg")',
+        allPageBg: 'url("src/assets/BGpage.jpg")',
       },
       fontFamily: {
         kanit: ['Chonburi', 'serif'],
