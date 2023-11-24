@@ -54,6 +54,8 @@ const AuthProvider = ({ children }: IAuthProviderProps) => {
       localStorage.setItem('token', res.data.accessToken)
       localStorage.setItem('username', username)
       setIsLoggedin(true)
+      console.log(isLoggedIn)
+
       setUsername(username)
     } catch (err) {
       throw new Error('Invalid username or password')
