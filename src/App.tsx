@@ -1,6 +1,5 @@
-import Navbar from './components/Navbar'
 import { Checkout } from './pages/Checkout'
-import { DemoCreateProduct } from './pages/DemoCreateProduct'
+import { CreateProduct } from './pages/CreateProduct'
 import { Home } from './pages/Home'
 import { Profile } from './pages/Profile'
 import { Route, Routes } from 'react-router-dom'
@@ -15,7 +14,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
 
@@ -24,11 +23,11 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Route>
 
+        <Route path="/create" element={<CreateProduct />} />
         <Route element={<GuardedRoute isRouteAccessible={isLoggedIn} redirectRoute="/login" />}>
           <Route path="/profile" element={<Profile />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
-          <Route path="/create" element={<DemoCreateProduct />} />
         </Route>
       </Routes>
     </>
