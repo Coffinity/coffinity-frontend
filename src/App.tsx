@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import { Cart } from './pages/Cart'
+import TrackingHistory from './pages/TrackingHistory'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/create" element={<DemoCreateProduct />} />
+        <Route path="/tracking" element={<TrackingHistory />} />
       </Routes>
     </>
   )
