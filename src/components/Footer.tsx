@@ -2,10 +2,15 @@ import FacebookIcon from '@mui/icons-material/Facebook'
 import PhoneIcon from '@mui/icons-material/Phone'
 import HomeIcon from '@mui/icons-material/Home'
 import InstagramIcon from '@mui/icons-material/Instagram'
+import { FC } from 'react'
 
-const Footer = () => {
+interface Props {
+  footerRef: React.MutableRefObject<HTMLDivElement | null>
+}
+
+const Footer: FC<Props> = ({ footerRef }) => {
   return (
-    <footer className="bg-footerTexture py-10">
+    <footer ref={footerRef} className="bg-footerTexture py-10">
       <div className="flex w-full gap-x-20 items-center justify-between">
         <div className="w-1/2">
           <img src="../src/assets/logo.png" className="mx-auto h-64 w-64" />

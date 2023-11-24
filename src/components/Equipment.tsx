@@ -1,8 +1,13 @@
+import { FC } from 'react'
 import CardProduct from './CardProduct'
 
-const Equipment = () => {
+interface Props {
+  equipmentRef: React.MutableRefObject<HTMLDivElement | null>
+}
+
+const Equipment: FC<Props> = ({ equipmentRef }) => {
   return (
-    <div className=" bg-[#D5D5D5]">
+    <div ref={equipmentRef} className=" bg-[#D5D5D5]">
       <div className="flex justify-center bg-[#D5D5D5]">
         <img src="../src/assets/equipmentsBanner.png" className="w-1/2" />
       </div>
