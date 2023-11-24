@@ -7,8 +7,10 @@ import { Route, Routes } from 'react-router-dom'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import { Cart } from './pages/Cart'
+
 import GuardedRoute from './guard/GuardedRoute'
 import { useAuth } from './providers/AuthProvider'
+
 
 function App() {
   const { isLoggedIn } = useAuth()
@@ -18,7 +20,6 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route element={<GuardedRoute isRouteAccessible={!isLoggedIn} redirectRoute="/" />}>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />

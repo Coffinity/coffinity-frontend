@@ -21,11 +21,10 @@ export default function Register() {
     }
   }
   return (
-    <div className="h-screen flex justify-center items-center ">
-      <form
-        onSubmit={handleSubmit}
-        className="relative space-y-3 rounded-md bg-white p-6 shadow-xl lg:p-10 border border-gray-100"
-      >
+
+    <div className="h-screen flex justify-center items-center bg-allPageBg bg-cover ">
+      <form onSubmit={handleSubmit} className="relative space-y-3 rounded-md bg-white p-6 shadow-xl lg:p-10 border border-gray-100 bg-opacity-80 text-black">
+
         <h1 className="text-xl font-semibold lg:text-2xl flex items-center">REGISTER</h1>
 
         <label className=""> Username </label>
