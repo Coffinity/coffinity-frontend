@@ -12,7 +12,7 @@ interface Order {
   total: number
 }
 export default function TrackingHistory() {
-  const [orders, setOrder] = useState<Order[]>([
+  const [orders, setOders] = useState<Order[]>([
     {
       name: 'test',
       price: 10,
