@@ -1,5 +1,3 @@
-
-import { Checkout } from './pages/Checkout'
 import { CreateProduct } from './pages/CreateProduct'
 import { useRef } from 'react'
 import Navbar from './components/Navbar'
@@ -12,7 +10,6 @@ import Login from './pages/Login'
 import { Profile } from './pages/Profile'
 import { Cart } from './pages/Cart'
 import { Checkout } from './pages/Checkout'
-import { DemoCreateProduct } from './pages/DemoCreateProduct'
 
 function App() {
   const coffeeBeanRef = useRef<HTMLDivElement | null>(null)
@@ -53,12 +50,11 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Route>
 
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/create" element={<CreateProduct />} />
-        <Route element={<GuardedRoute isRouteAccessible={isLoggedIn} redirectRoute="/login" />}>
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<Checkout />} />
-        </Route>
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route element={<GuardedRoute isRouteAccessible={isLoggedIn} redirectRoute="/login" />}></Route>
       </Routes>
     </>
   )

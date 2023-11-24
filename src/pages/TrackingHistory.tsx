@@ -14,13 +14,13 @@ interface Order {
 export default function TrackingHistory() {
   const [orders, setOders] = useState<Order[]>([
     {
-      name: 'test',
+      name: 'Product name',
       price: 10,
       quantity: 1,
       total: 10,
     },
     {
-      name: 'test2',
+      name: 'Product name',
       price: 10,
       quantity: 1,
       total: 10,
@@ -33,24 +33,24 @@ export default function TrackingHistory() {
   // }, [])
 
   return (
-    <div className="min-h-screen w-full flex flex-col justify-center gap-y-5 ">
-      <div className="flex justify-center items-center w-full">
-        <form className="rounded-md bg-white p-6 shadow-xl lg:p-10 border border-gray-100 w-1/2 items-center my-10">
+    <div className="min-h-screen pt-24 bg-allPageBg bg-cover bg-center bg-no-repeat flex flex-col items-center">
+      <div className="flex justify-center items-center w-full my-10">
+        <form className="rounded-md bg-white bg-opacity-80 p-6 shadow-xl lg:p-10 border border-gray-100 w-1/2 items-center my-10">
           <div className="flex justify-center ">
             <div className="flex w-full gap-x-20 justify-center w-1/2">
               <div className="">
                 <div className="">
-                  <p className="text-2xl font-bold">ORDER PRODUCT</p>
+                  <p className="text-xl font-semibold lg:text-2xl flex items-center">ORDER PRODUCT</p>
                   <p>1</p>
                   <p>1</p>
                 </div>
                 <div className="">
-                  <p className="text-2xl font-bold">SHIPPING ADRESS</p>
+                  <p className="text-xl font-semibold lg:text-2xl flex items-center">SHIPPING ADRESS</p>
                   <p>1</p>
                   <p>1</p>
                 </div>
                 <div className="">
-                  <p className="text-2xl font-bold">TRACKING NUMBER</p>
+                  <p className="text-xl font-semibold lg:text-2xl flex items-center">TRACKING NUMBER</p>
                   <p>1</p>
                   <p>1</p>
                 </div>
@@ -62,9 +62,8 @@ export default function TrackingHistory() {
             </div>
 
             <div className="space-y-10 w-3/4">
-              <div className="text-2xl font-bold ">PRODUCT ORDER</div>
-              <div className="space-y-3"></div>
-
+              <div className="text-xl font-semibold lg:text-2xl flex items-center space-y-3 ">PRODUCT ORDER</div>
+              <div className=""></div>
               {orders.map((order, index) => (
                 <>
                   <div key={index} className="flex justify-start gap-10">
@@ -86,7 +85,7 @@ export default function TrackingHistory() {
                   </div>
                 </>
               ))}
-              <div className="flex justify-center">TOTAL :</div>
+              <div className="text-sm font-medium text-gray-900">Total :</div>
             </div>
           </div>
         </form>
