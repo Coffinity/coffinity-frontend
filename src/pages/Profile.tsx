@@ -19,7 +19,7 @@ export const Profile = () => {
             <h1 className="text-xl font-semibold lg:text-2xl flex items-center justify-center">ORDER HISTORY</h1>
           </div>
 
-          <div className="mx-auto mt-3 p overflow-hidden rounded-xl border shadow  ">
+          <div className="mx-auto mt-3 p overflow-hidden rounded-xl border shadow ">
             <table className="w-full border-separate border-spacing-y-2 border-spacing-x-2">
               <thead className="hidden w-full border-b lg:table-header-group">
                 <tr className="w-full">
