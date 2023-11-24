@@ -1,16 +1,30 @@
 import LocalMallIcon from '@mui/icons-material/LocalMall'
+import { FC } from 'react'
 
-const Navbar = () => {
+interface Props {
+  onCoffeeBeanCick: () => void
+  onEquipmentClick: () => void
+  onFooterClick: () => void
+}
+
+const Navbar: FC<Props> = ({ onCoffeeBeanCick, onEquipmentClick, onFooterClick }) => {
   return (
     <div>
       <div className="navbar w-full z-50 fixed bg-black text-neutral-content bg-opacity-50 justify-between">
         <div className="flex">
           <h1 className="text-white m-5 font-kanit text-4xl">ดัมมะชาติ</h1>
           <div className="flex py-10 mt-13">
-            <p className="text-white px-5">HOME</p>
-            <p className="text-white px-5">COFFEE</p>
-            <p className="text-white px-5"> EQUIPMENT</p>
-            <p className="text-white px-5">CONTACT</p>
+            <button className="hover:text-white px-5">HOME</button>
+            <button className="hover:text-white px-5" onClick={onCoffeeBeanCick}>
+              COFFEE
+            </button>
+            <button className="hover:text-white px-5" onClick={onEquipmentClick}>
+              {' '}
+              EQUIPMENT
+            </button>
+            <button className="hover:text-white px-5" onClick={onFooterClick}>
+              CONTACT
+            </button>
           </div>
         </div>
         <div className="flex ">

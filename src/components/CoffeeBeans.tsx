@@ -1,9 +1,14 @@
 import { Carousel } from 'flowbite-react'
 import AllCardProductHover from './AllCardProductHover'
+import { FC } from 'react'
 
-function CoffeeBeans() {
+interface Props {
+  coffeeBeanRef: React.MutableRefObject<HTMLDivElement | null>
+}
+
+const CoffeeBeans: FC<Props> = ({ coffeeBeanRef }) => {
   return (
-    <div className=" bg-[#ededed]">
+    <div ref={coffeeBeanRef} className=" bg-[#ededed]">
       <div className="flex justify-center bg-[#ededed]">
         <img src="../src/assets/CoffeeBeans.png" className="w-1/2" />
       </div>
