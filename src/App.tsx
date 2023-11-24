@@ -1,13 +1,14 @@
-import TrackingHistory from './pages/TrackingHistory'
+import Footer from './components/Footer'
+import Navbar from './components/Navbar'
+import { Home } from './pages/Home'
 
 function App() {
   return (
     <>
-      {/* <Navbar /> */}
-      <TrackingHistory />
+      <Navbar />
 
-      {/* <Home />
-      <Footer /> */}
+      <Home />
+      <Footer />
     </>
   )
 }
