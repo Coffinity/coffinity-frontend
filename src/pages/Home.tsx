@@ -1,9 +1,9 @@
 import { FC } from 'react'
-import CoffeeBeans from '../components/CoffeeBeans'
+import Header from '../components/Header'
 import Detail from '../components/Detail'
+import CoffeeBeans from '../components/CoffeeBeans'
 import Equipment from '../components/Equipment'
 import Footer from '../components/Footer'
-import Header from '../components/Header'
 
 interface Props {
   coffeeBeanRef: React.MutableRefObject<HTMLDivElement | null>

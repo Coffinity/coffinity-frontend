@@ -5,7 +5,13 @@ import { Home } from './pages/Home'
 
 import GuardedRoute from './guard/GuardedRoute'
 import { useAuth } from './providers/AuthProvider'
-
+import { Route, Routes } from 'react-router-dom'
+import Register from './pages/Register'
+import Login from './pages/Login'
+import { Profile } from './pages/Profile'
+import { Cart } from './pages/Cart'
+import { Checkout } from './pages/Checkout'
+import { DemoCreateProduct } from './pages/DemoCreateProduct'
 
 function App() {
   const coffeeBeanRef = useRef<HTMLDivElement | null>(null)
@@ -35,9 +41,12 @@ function App() {
 
   return (
     <>
-     <Navbar onCoffeeBeanCick={onCoffeeBeanClick} onEquipmentClick={onEquipmentClick} onFooterClick={onFooterClick} />
+      <Navbar onCoffeeBeanCick={onCoffeeBeanClick} onEquipmentClick={onEquipmentClick} onFooterClick={onFooterClick} />
       <Routes>
-        <Route path="/" element={<Home coffeeBeanRef={coffeeBeanRef} equipmentRef={equipmentRef} footerRef={footerRef} />} />
+        <Route
+          path="/"
+          element={<Home coffeeBeanRef={coffeeBeanRef} equipmentRef={equipmentRef} footerRef={footerRef} />}
+        />
         <Route element={<GuardedRoute isRouteAccessible={!isLoggedIn} redirectRoute="/" />}>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />

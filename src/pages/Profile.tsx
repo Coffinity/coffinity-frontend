@@ -16,22 +16,23 @@ export const Profile = () => {
           </div>
 
           <div className="mt-3 flex justify-center">
-            <h1 className="text-xl font-semibold lg:text-2xl flex items-center justify-center">ORDER HISTORY</h1>
+            <h1 className="text-xl font-semibold lg:text-xl flex items-center justify-center">ORDER HISTORY</h1>
           </div>
 
-          <div className="mx-auto mt-3 p overflow-hidden rounded-xl border shadow ">
-            <table className="w-full border-separate border-spacing-y-2 border-spacing-x-2">
+          <div className="">
+            {/* mx-auto mt-3 p overflow-hidden rounded-xl border shadow  */}
+            <table className="w-full border-separate border-spacing-y-2 border-spacing-x-2 mt-6 border-t border-b py-2 border-black">
               <thead className="hidden w-full border-b lg:table-header-group">
                 <tr className="w-full">
-                  <td width="50%" className="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">
+                  <td width="50%" className="whitespace-normal py-4 text-sm font-bold text-gray-500 sm:px-6">
                     Order
                   </td>
 
-                  <td className="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">Date</td>
+                  <td className="whitespace-normal py-4 text-sm font-bold text-gray-500 sm:px-6">Date</td>
 
-                  <td className="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">Amount</td>
+                  <td className="whitespace-normal py-4 text-sm font-bold text-gray-500 sm:px-6">Amount</td>
 
-                  <td className="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">Status</td>
+                  <td className="whitespace-normal py-4 text-sm font-bold text-gray-500 sm:px-6">Status</td>
                 </tr>
               </thead>
 
@@ -50,7 +51,7 @@ export const Profile = () => {
 
                   <td className="whitespace-no-wrap py-4 px-6 text-right text-sm text-gray-600 lg:text-left">
                     500.00 THB
-                    <div className="flex mt-1 ml-auto w-fit items-center rounded-full bg-black py-2 px-3 text-left text-xs font-medium text-white lg:hidden">
+                    <div className="flex mt-1 ml-auto w-fit items-center rounded-full bg-black py-2 px-3 text-left text-xs font-bold text-white lg:hidden">
                       Complete
                     </div>
                   </td>
@@ -76,7 +77,7 @@ export const Profile = () => {
 
                   <td className="whitespace-no-wrap py-4 px-6 text-right text-sm text-gray-600 lg:text-left">
                     500.00 THB
-                    <div className="flex mt-1 ml-auto w-fit items-center rounded-full bg-gray-500 py-1 px-2 text-left font-medium text-white lg:hidden">
+                    <div className="flex mt-1 ml-auto w-fit items-center rounded-full bg-gray-500 py-1 px-2 text-left font-bold text-white lg:hidden">
                       Pending
                     </div>
                   </td>
@@ -102,7 +103,7 @@ export const Profile = () => {
 
                   <td className="whitespace-no-wrap py-4 px-6 text-right text-sm text-gray-600 lg:text-left">
                     500.00 THB
-                    <div className="flex mt-1 ml-auto w-fit items-center rounded-full bg-black py-2 px-3 text-left text-xs font-medium text-white lg:hidden">
+                    <div className="flex mt-1 ml-auto w-fit items-center rounded-full bg-black py-2 px-3 text-left text-xs font-bold text-white lg:hidden">
                       Complete
                     </div>
                   </td>
