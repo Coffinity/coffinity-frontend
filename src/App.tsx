@@ -1,8 +1,9 @@
-import { useRef } from 'react'
 
+import { Checkout } from './pages/Checkout'
+import { CreateProduct } from './pages/CreateProduct'
+import { useRef } from 'react'
 import Navbar from './components/Navbar'
 import { Home } from './pages/Home'
-
 import GuardedRoute from './guard/GuardedRoute'
 import { useAuth } from './providers/AuthProvider'
 
@@ -43,11 +44,11 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Route>
 
+        <Route path="/create" element={<CreateProduct />} />
         <Route element={<GuardedRoute isRouteAccessible={isLoggedIn} redirectRoute="/login" />}>
           <Route path="/profile" element={<Profile />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
-          <Route path="/create" element={<DemoCreateProduct />} />
         </Route>
       </Routes>
     </>
