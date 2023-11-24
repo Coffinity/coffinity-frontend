@@ -1,6 +1,10 @@
 import { FormEvent, useState } from 'react'
+import useProducts from '../hooks/useProducts'
+import { useNavigate } from 'react-router-dom'
 
 export const CreateProduct = () => {
+  const { createProduct } = useProducts()
+  const navigate = useNavigate()
   const [newProductName, setNewProductName] = useState<string>('')
   const [newProductDescription, setNewProductDescription] = useState<string>('')
   const [newImage, setNewImage] = useState<string | ArrayBuffer | null>('')
@@ -8,15 +12,23 @@ export const CreateProduct = () => {
   const [newPrice, setNewPrice] = useState<number>(0)
   const [newStockQuantity, setNewStockQuantity] = useState<number>(0)
 
-  console.log(newProductName)
-  console.log(newProductDescription)
-  console.log(newImage)
-  console.log(newPrice)
-  console.log(newStockQuantity)
-  console.log(newTypes)
-
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
+
+    try {
+      await createProduct({
+        name: newProductName,
+        description: newProductDescription,
+        image: newImage as ArrayBuffer,
+        type: newTypes,
+        price: newPrice,
+        stockQuantity: newStockQuantity,
+      })
+
+      navigate('/')
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   const handleProductImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -79,7 +91,9 @@ export const CreateProduct = () => {
         )}
       </div>
 
-      <button type="submit">Submit</button>
+      <button type="submit" className="bg-black">
+        Submit
+      </button>
     </form>
   )
 }

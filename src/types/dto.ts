@@ -23,7 +23,7 @@ export interface IAccessToken {
 export interface ICreateProductDTO {
   name: string
   description: string
-  image: string
+  image: ArrayBuffer
   type: string
   price: number
   stockQuantity: number
