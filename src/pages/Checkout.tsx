@@ -155,18 +155,36 @@ export const Checkout = () => {
             <div className="flex my-10">
               <p className="text-3xl text-white font-bold">ORDER SUMMARY</p>
             </div>
-            <div className="bg-white bg-opacity-80 px-2 py-2  lg:mt-0 rounded-lg  ">
+            <div className="bg-white bg-opacity-80 px-2 py-2 lg:mt-0 rounded-lg h-[772px] overflow-y-auto">
               <div className="">
-                <div className="flex rounded-lg  sm:flex-row">
-                  <img
-                    className="m-2 h-24 w-28 object-cover object-center"
-                    src="src/assets/Test Product.png"
-                    alt="product image"
-                  />
-                  <div className="flex w-full flex-col px-4 py-4">
-                    <span className="text-l font-semibold">Dhamajati Balance</span>
-                    <span className="text-sm font-normal text-gray-500">200g</span>
-                    <p className="text-l font-semibold">400.00 ฿</p>
+                <div className="">
+                  <div className="flex rounded-lg  sm:flex-row">
+                    <img
+                      className="m-2 h-24 w-28 object-cover object-center"
+                      src="src/assets/Test Product.png"
+                      alt="product image"
+                    />
+                    <div className="flex w-full flex-col px-4 py-4">
+                      <span className="text-l font-semibold">Dhamajati Balance</span>
+                      <span className="text-sm font-normal text-gray-500">200g</span>
+                      <p className="text-l font-semibold">400.00 ฿</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="">
+                <div className="">
+                  <div className="flex rounded-lg  sm:flex-row">
+                    <img
+                      className="m-2 h-24 w-28 object-cover object-center"
+                      src="src/assets/Test Product.png"
+                      alt="product image"
+                    />
+                    <div className="flex w-full flex-col px-4 py-4">
+                      <span className="text-l font-semibold">Dhamajati Balance</span>
+                      <span className="text-sm font-normal text-gray-500">200g</span>
+                      <p className="text-l font-semibold">400.00 ฿</p>
+                    </div>
                   </div>
                 </div>
               </div>
