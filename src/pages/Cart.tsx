@@ -8,7 +8,7 @@ export const Cart = () => {
         {/* relative w-1/2 bg-white shadow-xl p-10 rounded-md bg-opacity-80 mt-52 mb-28 text-black border border-gray-100 */}
         <div className="">
           <div className="flex items-center justify-center">
-            <h1 className="text-xl font-semibold lg:text-2xl flex items-center justify-center">YOUR CART</h1>
+            <h1 className="text-xl font-semibold lg:text-2xl flex items-center">YOUR CART</h1>
           </div>
 
           <div className="my-8 ">
