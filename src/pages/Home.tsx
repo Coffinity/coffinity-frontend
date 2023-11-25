@@ -1,5 +1,9 @@
 import { FC } from 'react'
-import TrackingHistory from './TrackingHistory'
+import Header from '../components/Header'
+import Detail from '../components/Detail'
+import CoffeeBeans from '../components/CoffeeBeans'
+import Equipment from '../components/Equipment'
+import Footer from '../components/Footer'
 
 interface Props {
   coffeeBeanRef: React.MutableRefObject<HTMLDivElement | null>
@@ -10,12 +14,11 @@ interface Props {
 export const Home: FC<Props> = ({ coffeeBeanRef, equipmentRef, footerRef }) => {
   return (
     <div>
-      {/* <Header />
+      <Header />
       <Detail />
       <CoffeeBeans coffeeBeanRef={coffeeBeanRef} />
       <Equipment equipmentRef={equipmentRef} />
-      <Footer footerRef={footerRef} /> */}
-      <TrackingHistory />
+      <Footer footerRef={footerRef} />
     </div>
   )
 }
