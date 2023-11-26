@@ -1,6 +1,5 @@
 import { CreateProduct } from './pages/CreateProduct'
 import { useRef } from 'react'
-import Navbar from './components/Navbar'
 import { Home } from './pages/Home'
 import GuardedRoute from './guard/GuardedRoute'
 import { useAuth } from './providers/AuthProvider'
@@ -10,6 +9,7 @@ import Login from './pages/Login'
 import { Profile } from './pages/Profile'
 import { Cart } from './pages/Cart'
 import { Checkout } from './pages/Checkout'
+import Navbar from './components/Navbar'
 
 function App() {
   const coffeeBeanRef = useRef<HTMLDivElement | null>(null)
