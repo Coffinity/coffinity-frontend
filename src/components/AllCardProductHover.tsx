@@ -1,14 +1,17 @@
 import { CardProductHover } from './CardProductHover'
-import useProducts from '../hooks/useProducts'
+import { IProductDTO } from '../types/dto'
+import { FC } from 'react'
 
-const AllCardProductHover = () => {
-  const { products } = useProducts()
+interface Props {
+  items: IProductDTO[]
+}
 
+const AllCardProductHover: FC<Props> = ({ items }) => {
   return (
     <div className="flex w-full mx-auto">
-      {products &&
-        products.map((product) => {
-          return <CardProductHover key={product.id} cardProductHover={product} />
+      {items &&
+        items.map((item) => {
+          return <CardProductHover key={item.id} cardProductHover={item} />
         })}
     </div>
   )
