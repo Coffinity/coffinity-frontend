@@ -7,7 +7,7 @@ export const Checkout = () => {
             <h1 className="text-3xl text-white font-bold">CHECK OUT</h1>
           </div>
           <div className="my-10 bg-white bg-opacity-80 px-8 pt-8 lg:mt-0 rounded-lg ">
-            <p className="text-xl font-semibold lg:text-2xl flex items-center">SHIPPING ADRESS</p>
+            <p className="text-xl font-semibold lg:text-2xl flex items-center text-black">SHIPPING ADRESS</p>
 
             <div className="">
               <div className="">
@@ -42,7 +42,7 @@ export const Checkout = () => {
                   />
                 </div>
               </div>
-              <label htmlFor="card-detail" className="mt-4 mb-2 block text-sm font-medium">
+              <label htmlFor="card-detail" className="mt-4 mb-2 block text-sm font-medium text-black">
                 Card Details
               </label>
               <div className="my-5">
@@ -155,7 +155,7 @@ export const Checkout = () => {
             <div className="flex my-10">
               <p className="text-3xl text-white font-bold">ORDER SUMMARY</p>
             </div>
-            <div className="bg-white bg-opacity-80 px-2 py-2 lg:mt-0 rounded-lg h-[772px] overflow-y-auto">
+            <div className="bg-white bg-opacity-80 px-8 py-8 lg:mt-0 rounded-lg h-[386px] overflow-y-auto">
               <div className="">
                 <div className="">
                   <div className="flex rounded-lg  sm:flex-row">
@@ -165,9 +165,9 @@ export const Checkout = () => {
                       alt="product image"
                     />
                     <div className="flex w-full flex-col px-4 py-4">
-                      <span className="text-l font-semibold">Dhamajati Balance</span>
+                      <span className="text-l font-semibold text-black">Dhamajati Balance</span>
                       <span className="text-sm font-normal text-gray-500">200g</span>
-                      <p className="text-l font-semibold">400.00 ฿</p>
+                      <p className="text-l font-semibold text-black">400.00 ฿</p>
                     </div>
                   </div>
                 </div>
@@ -181,9 +181,9 @@ export const Checkout = () => {
                       alt="product image"
                     />
                     <div className="flex w-full flex-col px-4 py-4">
-                      <span className="text-l font-semibold">Dhamajati Balance</span>
+                      <span className="text-l font-semibold text-black">Dhamajati Balance</span>
                       <span className="text-sm font-normal text-gray-500">200g</span>
-                      <p className="text-l font-semibold">400.00 ฿</p>
+                      <p className="text-l font-semibold text-black">400.00 ฿</p>
                     </div>
                   </div>
                 </div>

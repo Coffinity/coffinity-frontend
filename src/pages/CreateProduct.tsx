@@ -64,6 +64,7 @@ export const CreateProduct = () => {
         <label>Image</label>
         <input type="file" accept="image/" onChange={handleProductImageUpload} required />
 
+
         <select
           className="select select-bordered w-full max-w-xs"
           defaultValue={newTypes}
