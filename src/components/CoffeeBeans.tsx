@@ -1,6 +1,6 @@
-import { Carousel } from 'flowbite-react'
 import AllCardProductHover from './AllCardProductHover'
 import { FC } from 'react'
+import CustomCarousel from './CustomCarousel'
 
 interface Props {
   coffeeBeanRef: React.MutableRefObject<HTMLDivElement | null>
@@ -14,21 +14,21 @@ const CoffeeBeans: FC<Props> = ({ coffeeBeanRef }) => {
       </div>
       <div className="w-4/5 mx-auto">
         <h1 className="font-bold text-[30px] text-[#585252]">HOUSE BLEND</h1>
-        <Carousel slide={false}>
+        <CustomCarousel>
           <AllCardProductHover />
           <AllCardProductHover />
           <AllCardProductHover />
           <AllCardProductHover />
-        </Carousel>
+        </CustomCarousel>
       </div>
       <div className="w-4/5 mx-auto">
         <h1 className="font-bold text-[30px] text-[#585252]">SINGLE ORIGIN</h1>
-        <Carousel slide={false}>
+        <CustomCarousel>
           <AllCardProductHover />
           <AllCardProductHover />
           <AllCardProductHover />
           <AllCardProductHover />
-        </Carousel>
+        </CustomCarousel>
       </div>
     </div>
   )

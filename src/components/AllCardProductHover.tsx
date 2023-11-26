@@ -5,7 +5,7 @@ const AllCardProductHover = () => {
 
   return (
     <>
-      <div className="flex">
+      <div className="flex ">
         <div className="relative m-10 flex w-full h-max max-w-xs flex-col overflow-hidden rounded-lg bg-transparent shadow-[0_0_50px_0 rgb(0 0 0 / 0.1)">
           <div className="w-72 group">
             <a className="flex flex-cols rounded-xl items-center" href="#">
