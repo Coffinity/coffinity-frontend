@@ -1,34 +1,38 @@
 import { useState } from 'react'
+import { IProductDTO } from '../types/dto'
+import { FC } from 'react'
 
-const CardProductHover = () => {
+export interface IProductProps {
+  cardProductHover: IProductDTO
+}
+
+export const CardProductHover: FC<IProductProps> = ({ cardProductHover }) => {
   const [quantityProduct, setQuantityProduct] = useState<number>(1)
 
   return (
     <div className="relative m-10 flex w-full h-max max-w-xs flex-col overflow-hidden rounded-lg bg-transparent shadow-[0_0_50px_0 rgb(0 0 0 / 0.1)">
-      <div className="w-72 group">
-        <a className="flex flex-cols rounded-xl items-center" href="#">
-          <img className="" src="src/assets/Test Product.png" alt="product image" />
-        </a>
+      <div className="w-full group">
+        <div className="">
+          <a className="flex flex-cols rounded-xl items-center" href="#">
+            <img className="w-full h-[270px] object-fill" src={cardProductHover.image} alt="product image" />
+          </a>
+        </div>
         <div className="absolute w-full bg-black/80 flex flex-col items-center justify-center top-0 h-[270px] rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300">
           <h1 className="font-bold text-white text-lg">BALANCE</h1>
           <br />
-          <h3 className="font-semibold text-white">Now Blending :</h3>
-          <p className="text-white text-sm">- Brazil Cerrado Natural</p>
-          <p className="text-white text-sm">- Thailand AJA Coffee Farm Washed</p>
-          <br />
-          <h3 className="font-semibold text-white">Recommend for :</h3>
-          <p className="text-white text-sm">Espresso & Milk Based Drinks</p>
+          <h3 className="font-semibold text-white">Description :</h3>
+          <p className="text-white text-sm">{cardProductHover.description}</p>
         </div>
       </div>
 
       <div className="mt-4 px-5 pb-5 flex flex-col text-center">
         <a href="#">
-          <h5 className="text-xl font-bold tracking-tight text-slate-900">Dhamajati Balance (200g)</h5>
-          <p className="text-green-500">In stock</p>
+          <h5 className="text-xl font-bold tracking-tight text-slate-900">{cardProductHover.name}</h5>
+          <p className="text-green-500">Instocks</p>
         </a>
         <div className="mt-2 mb-5 flex flex-col items-center">
           <p>
-            <span className="text-3xl font-bold text-slate-900">400.00 ฿</span>
+            <span className="text-3xl font-bold text-slate-900">{cardProductHover.price} ฿</span>
           </p>
           <p className="py-3">Shipping calculated at checkout.</p>
           <div className="w-36 h-16 bg-white rounded-2xl border-2 border-neutral-400 flex items-center justify-center">
@@ -65,5 +69,3 @@ const CardProductHover = () => {
     </div>
   )
 }
-
-export default CardProductHover

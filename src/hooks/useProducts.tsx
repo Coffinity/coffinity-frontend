@@ -3,14 +3,14 @@ import { ICreateProductDTO, IProductDTO } from '../types/dto'
 import axios from 'axios'
 
 const useProducts = () => {
-  const [products, setProducts] = useState<IProductDTO | null>(null)
+  const [products, setProducts] = useState<IProductDTO[] | null>(null)
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true)
       try {
-        const res = await axios.get<IProductDTO>('http://localhost:8080/products')
+        const res = await axios.get<IProductDTO[]>('http://localhost:8080/products')
 
         setProducts(res.data)
       } catch (err) {

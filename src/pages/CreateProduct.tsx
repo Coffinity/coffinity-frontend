@@ -55,45 +55,47 @@ export const CreateProduct = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Product Name</label>
-      <input type="text" onChange={(e) => setNewProductName(e.target.value)} required />
-      <label>Product Description</label>
-      <input type="text" onChange={(e) => setNewProductDescription(e.target.value)} required />
-      <label>Image</label>
-      <input type="file" accept="image/" onChange={handleProductImageUpload} required />
+    <div className="">
+      <form className="h-screen flex justify-center items-center bg-cover" onSubmit={handleSubmit}>
+        <label>Product Name</label>
+        <input type="text" onChange={(e) => setNewProductName(e.target.value)} required />
+        <label>Product Description</label>
+        <input type="text" onChange={(e) => setNewProductDescription(e.target.value)} required />
+        <label>Image</label>
+        <input type="file" accept="image/" onChange={handleProductImageUpload} required />
 
-      <select
-        className="select select-bordered w-full max-w-xs"
-        defaultValue={newTypes}
-        onChange={(e) => setnewTypes(e.target.value)}
-        required
-      >
-        <option value={newTypes} disabled selected>
-          Types
-        </option>
-        <option value={'Coffee Beans'}>Coffee Beans</option>
-        <option value={'Equipments'}>Equipments</option>
-      </select>
+        <select
+          className="select select-bordered w-full max-w-xs"
+          defaultValue={newTypes}
+          onChange={(e) => setnewTypes(e.target.value)}
+          required
+        >
+          <option value={newTypes} disabled selected>
+            Types
+          </option>
+          <option value={'Coffee Beans'}>Coffee Beans</option>
+          <option value={'Equipments'}>Equipments</option>
+        </select>
 
-      <label>Price</label>
-      <input type="number" onChange={(e) => setNewPrice(e.target.valueAsNumber)} required />
-      <label>Quantity</label>
-      <input type="number" onChange={(e) => setNewStockQuantity(e.target.valueAsNumber)} required />
-      <div>
-        {newImage ? (
-          <>
-            {' '}
-            <img src={newImage as string} alt="product image" />{' '}
-          </>
-        ) : (
-          <p>Image preview will appear here!</p>
-        )}
-      </div>
+        <label>Price</label>
+        <input type="number" onChange={(e) => setNewPrice(e.target.valueAsNumber)} required />
+        <label>Quantity</label>
+        <input type="number" onChange={(e) => setNewStockQuantity(e.target.valueAsNumber)} required />
+        <div>
+          {newImage ? (
+            <div>
+              {' '}
+              <img src={newImage as string} alt="product image" />{' '}
+            </div>
+          ) : (
+            <p>Image preview will appear here!</p>
+          )}
+        </div>
 
-      <button type="submit" className="bg-black">
-        Submit
-      </button>
-    </form>
+        <button type="submit" className="bg-black">
+          Submit
+        </button>
+      </form>
+    </div>
   )
 }
