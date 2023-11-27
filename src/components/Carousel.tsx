@@ -16,15 +16,6 @@ const Carousel: FC<Props> = ({ images }) => {
       })
     }
   }
-  const startAutoSlide = () => {
-    timeoutRef.current = window.setInterval(() => {
-      if (carouselElement.current) {
-        const currentIndex = Math.floor(carouselElement.current.scrollLeft / carouselElement.current.clientWidth)
-        const nextIndex = (currentIndex + 1) % images.length
-        goToSlide(nextIndex)
-      }
-    }, 3000)
-  }
 
   const stopAutoSlide = () => {
     if (timeoutRef.current) {
@@ -33,12 +24,22 @@ const Carousel: FC<Props> = ({ images }) => {
   }
 
   useEffect(() => {
+    const startAutoSlide = () => {
+      timeoutRef.current = window.setInterval(() => {
+        if (carouselElement.current) {
+          const currentIndex = Math.floor(carouselElement.current.scrollLeft / carouselElement.current.clientWidth)
+          const nextIndex = (currentIndex + 1) % images.length
+          goToSlide(nextIndex)
+        }
+      }, 3000)
+    }
+
     startAutoSlide()
 
     return () => {
       stopAutoSlide()
     }
-  }, [])
+  }, [images])
 
   return (
     <div className="carousel w-[450px] h-[450px] rounded-2xl" ref={carouselElement}>

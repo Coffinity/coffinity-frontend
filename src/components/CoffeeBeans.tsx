@@ -1,12 +1,32 @@
 import AllCardProductHover from './AllCardProductHover'
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import CustomCarousel from './CustomCarousel'
+import useProducts from '../hooks/useProducts'
+import { IProductDTO } from '../types/dto'
 
 interface Props {
   coffeeBeanRef: React.MutableRefObject<HTMLDivElement | null>
 }
 
 const CoffeeBeans: FC<Props> = ({ coffeeBeanRef }) => {
+  const { products } = useProducts()
+  const [displayProduct, setDisplayProduct] = useState<IProductDTO[][]>([])
+
+  useEffect(() => {
+    if (products) {
+      console.log(convertArray(products))
+      setDisplayProduct(convertArray(products))
+    }
+  }, [products])
+
+  function convertArray(oldArray: IProductDTO[]): IProductDTO[][] {
+    const newArray: IProductDTO[][] = []
+    for (let i = 0; i < oldArray.length; i += 4) {
+      newArray.push(oldArray.slice(i, i + 4))
+    }
+    return newArray
+  }
+
   return (
     <div ref={coffeeBeanRef} className=" bg-[#ededed]">
       <div className="flex justify-center bg-[#ededed]">
@@ -15,19 +35,17 @@ const CoffeeBeans: FC<Props> = ({ coffeeBeanRef }) => {
       <div className="w-4/5 mx-auto">
         <h1 className="font-bold text-[30px] text-[#585252]">HOUSE BLEND</h1>
         <CustomCarousel>
-          <AllCardProductHover />
-          <AllCardProductHover />
-          <AllCardProductHover />
-          <AllCardProductHover />
+          {displayProduct.map((items, index) => (
+            <AllCardProductHover items={items} key={index} />
+          ))}
         </CustomCarousel>
       </div>
       <div className="w-4/5 mx-auto">
         <h1 className="font-bold text-[30px] text-[#585252]">SINGLE ORIGIN</h1>
         <CustomCarousel>
-          <AllCardProductHover />
-          <AllCardProductHover />
-          <AllCardProductHover />
-          <AllCardProductHover />
+          {displayProduct.map((items, index) => (
+            <AllCardProductHover items={items} key={index} />
+          ))}
         </CustomCarousel>
       </div>
     </div>
