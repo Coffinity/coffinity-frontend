@@ -23,7 +23,7 @@ const CoffeeBeans: FC<Props> = ({ coffeeBeanRef }) => {
   return (
     <div ref={coffeeBeanRef} className=" bg-[#ededed]">
       <div className="flex justify-center bg-[#ededed]">
-        <img src="../src/assets/CoffeeBeans.png" className="w-1/2" />
+        <img src="assets/CoffeeBeans.png" className="w-1/2" />
       </div>
       <div className="w-4/5 mx-auto">
         <h1 className="font-bold text-[30px] text-[#585252]">HOUSE BLEND</h1>

@@ -20,7 +20,7 @@ export const Cart = () => {
                       <div className="shrink-0">
                         <img
                           className="h-24 w-24 max-w-full rounded-lg object-cover"
-                          src="src/assets/Test Product.png"
+                          src="assets/Test Product.png"
                           alt="product image"
                         />
                       </div>

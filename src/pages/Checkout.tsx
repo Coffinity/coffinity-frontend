@@ -160,7 +160,7 @@ export const Checkout = () => {
                 <div className="flex rounded-lg  sm:flex-row">
                   <img
                     className="m-2 h-24 w-28 object-cover object-center"
-                    src="src/assets/Test Product.png"
+                    src="assets/Test Product.png"
                     alt="product image"
                   />
                   <div className="flex w-full flex-col px-4 py-4">
@@ -175,7 +175,7 @@ export const Checkout = () => {
                 <div className="flex rounded-lg  sm:flex-row">
                   <img
                     className="m-2 h-24 w-28 object-cover object-center"
-                    src="src/assets/Test Product.png"
+                    src="assets/Test Product.png"
                     alt="product image"
                   />
                   <div className="flex w-full flex-col px-4 py-4">
@@ -189,7 +189,7 @@ export const Checkout = () => {
                 <div className="flex rounded-lg  sm:flex-row">
                   <img
                     className="m-2 h-24 w-28 object-cover object-center"
-                    src="src/assets/Test Product.png"
+                    src="assets/Test Product.png"
                     alt="product image"
                   />
                   <div className="flex w-full flex-col px-4 py-4">
@@ -203,7 +203,7 @@ export const Checkout = () => {
                 <div className="flex rounded-lg  sm:flex-row">
                   <img
                     className="m-2 h-24 w-28 object-cover object-center"
-                    src="src/assets/Test Product.png"
+                    src="assets/Test Product.png"
                     alt="product image"
                   />
                   <div className="flex w-full flex-col px-4 py-4">
