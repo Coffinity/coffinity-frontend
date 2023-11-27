@@ -25,11 +25,12 @@ export const useAuth = () => {
   return context
 }
 
+const token = localStorage.getItem('token')
 const user = localStorage.getItem('username')
 
 const AuthProvider = ({ children }: IAuthProviderProps) => {
   const navigate = useNavigate()
-  const [isLoggedIn, setIsLoggedin] = useState<boolean>(false)
+  const [isLoggedIn, setIsLoggedin] = useState<boolean>(!!token)
   const [username, setUsername] = useState<string | null>(user)
 
   const register = async (registerBody: ICreateUserDTO) => {

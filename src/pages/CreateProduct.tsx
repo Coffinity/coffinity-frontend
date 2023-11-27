@@ -84,8 +84,7 @@ export const CreateProduct = () => {
         <div>
           {newImage ? (
             <div>
-              {' '}
-              <img src={newImage as string} alt="product image" />{' '}
+              <img src={newImage as string} alt="product image" />
             </div>
           ) : (
             <p>Image preview will appear here!</p>
