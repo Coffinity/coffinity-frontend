@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { IUserDTO } from '../types/dto'
 import axios from 'axios'
+import { API_HOST } from '../const'
 
 const useProfile = () => {
   const [profile, setProfile] = useState<IUserDTO | null>(null)
@@ -11,7 +12,7 @@ const useProfile = () => {
       const token = localStorage.getItem('token')
       setIsLoading(true)
       try {
-        const res = await axios.get<IUserDTO>('http://localhost:8080/products', {
+        const res = await axios.get<IUserDTO>(`${API_HOST}/products`, {
           headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         })
 

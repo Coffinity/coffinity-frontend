@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ICreateProductDTO, IProductDTO } from '../types/dto'
 import axios from 'axios'
+import { API_HOST } from '../const'
 
 const useProducts = () => {
   const [products, setProducts] = useState<IProductDTO[] | null>(null)
@@ -10,7 +11,7 @@ const useProducts = () => {
     const fetchData = async () => {
       setIsLoading(true)
       try {
-        const res = await axios.get<IProductDTO[]>('http://localhost:8080/products')
+        const res = await axios.get<IProductDTO[]>(`${API_HOST}/products`)
 
         setProducts(res.data)
       } catch (err) {
@@ -26,7 +27,7 @@ const useProducts = () => {
     const token = localStorage.getItem('token')
 
     try {
-      const res = await axios.post<ICreateProductDTO>('http://localhost:8080/products', body, {
+      const res = await axios.post<ICreateProductDTO>(`${API_HOST}/products`, body, {
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
       })
       console.log(res.data)
