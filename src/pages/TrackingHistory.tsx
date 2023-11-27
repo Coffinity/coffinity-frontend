@@ -37,7 +37,7 @@ export default function TrackingHistory() {
       <div className="flex justify-center items-center w-full my-10">
         <form className="rounded-md bg-white bg-opacity-80 p-6 shadow-xl lg:p-10 border border-gray-100 w-1/2 items-center my-10">
           <div className="flex justify-center ">
-            <div className="flex w-full gap-x-20 justify-center w-1/2">
+            <div className="flex  gap-x-20 justify-center w-1/2">
               <div className="">
                 <div className="">
                   <p className="text-xl font-semibold lg:text-2xl flex items-center">ORDER PRODUCT</p>

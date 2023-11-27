@@ -35,7 +35,15 @@ const useProducts = () => {
     }
   }
 
-  return { products, isLoading, createProduct }
+  function filterProduct<T extends IProductDTO>(
+    items: T[] | null,
+    filterKey: keyof T,
+    filterValue: T[typeof filterKey],
+  ): T[] {
+    return items ? items.filter((item) => item[filterKey] === filterValue) : []
+  }
+
+  return { products, isLoading, createProduct, filterProduct }
 }
 
 export default useProducts
