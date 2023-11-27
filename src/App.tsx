@@ -10,11 +10,14 @@ import { Profile } from './pages/Profile'
 import { Cart } from './pages/Cart'
 import { Checkout } from './pages/Checkout'
 import Navbar from './components/Navbar'
+import useProfile from './hooks/userProfile'
+import { IUserDTO } from './types/dto'
 
 function App() {
   const coffeeBeanRef = useRef<HTMLDivElement | null>(null)
   const equipmentRef = useRef<HTMLDivElement | null>(null)
   const footerRef = useRef<HTMLDivElement | null>(null)
+  const { profile } = useProfile()
 
   const onCoffeeBeanClick = () => {
     scrollToElement(coffeeBeanRef.current)
@@ -52,7 +55,7 @@ function App() {
 
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/create" element={<CreateProduct />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={<Profile userInfo={profile as IUserDTO} />} />
         <Route path="/cart" element={<Cart />} />
         <Route element={<GuardedRoute isRouteAccessible={isLoggedIn} redirectRoute="/login" />}></Route>
       </Routes>

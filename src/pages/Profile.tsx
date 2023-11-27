@@ -1,4 +1,10 @@
-export const Profile = () => {
+import { IUserDTO } from '../types/dto'
+
+interface IProfileProps {
+  userInfo: IUserDTO
+}
+
+export const Profile = ({ userInfo }: IProfileProps) => {
   return (
     <div>
       <div className="min-h-screen w-full flex justify-center items-center bg-allPageBg bg-cover bg-fixed ">
@@ -7,11 +13,11 @@ export const Profile = () => {
           <div className="flex gap-5 text-gray-500  justify-center  mt-3 pb-4">
             <div className="flex ">
               <h2> Username :&nbsp; </h2>
-              <p>Info@example</p>
+              <p>{userInfo.username}</p>
             </div>
             <div className="flex">
               <h2> Email :&nbsp; </h2>
-              <p>Info@example.com</p>
+              <p>{userInfo.email}</p>
             </div>
           </div>
 
