@@ -1,4 +1,4 @@
-import { FC, useRef } from 'react'
+import { FC, useEffect, useRef } from 'react'
 
 interface Props {
   images: string[]
@@ -6,6 +6,7 @@ interface Props {
 
 const Carousel: FC<Props> = ({ images }) => {
   const carouselElement = useRef<HTMLDivElement | null>(null)
+  const timeoutRef = useRef<number | null>(null)
 
   const goToSlide = (index: number) => {
     if (carouselElement.current) {
@@ -15,6 +16,29 @@ const Carousel: FC<Props> = ({ images }) => {
       })
     }
   }
+  const startAutoSlide = () => {
+    timeoutRef.current = window.setInterval(() => {
+      if (carouselElement.current) {
+        const currentIndex = Math.floor(carouselElement.current.scrollLeft / carouselElement.current.clientWidth)
+        const nextIndex = (currentIndex + 1) % images.length
+        goToSlide(nextIndex)
+      }
+    }, 3000)
+  }
+
+  const stopAutoSlide = () => {
+    if (timeoutRef.current) {
+      clearInterval(timeoutRef.current)
+    }
+  }
+
+  useEffect(() => {
+    startAutoSlide()
+
+    return () => {
+      stopAutoSlide()
+    }
+  }, [])
 
   return (
     <div className="carousel w-[450px] h-[450px] rounded-2xl" ref={carouselElement}>
