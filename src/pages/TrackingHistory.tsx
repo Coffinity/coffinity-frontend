@@ -68,7 +68,7 @@ export default function TrackingHistory() {
                 <>
                   <div key={index} className="flex justify-start gap-10">
                     <div className="grid place-items-center">
-                      <img src="src/assets/DRIP.webp" className="h-24 w-24 max-w-full rounded-lg object-cover" />
+                      <img src="assets/DRIP.webp" className="h-24 w-24 max-w-full rounded-lg object-cover" />
                     </div>
                     <div>
                       <div>

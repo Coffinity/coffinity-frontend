@@ -13,7 +13,7 @@ const Footer: FC<Props> = ({ footerRef }) => {
     <footer ref={footerRef} className="bg-footerTexture py-10">
       <div className="flex w-full gap-x-20 items-center justify-between">
         <div className="w-1/2">
-          <img src="../src/assets/logo.png" className="mx-auto h-64 w-64" />
+          <img src="assets/logo.png" className="mx-auto h-64 w-64" />
         </div>
         <div className="flex items-center">
           <div className="w-0 h-[270px] border-solid border-white border-[1px]"></div>
@@ -39,7 +39,7 @@ const Footer: FC<Props> = ({ footerRef }) => {
               <p className="text-[#AAAAAA]">dharmajati_coffee_eatery</p>
             </div>
             <div className="flex gap-5 mb-5 items-center">
-              <img src="../src/assets/lineLogo.svg" className="object-cover h-[30px] w-[30px] " />
+              <img src="assets/lineLogo.svg" className="object-cover h-[30px] w-[30px] " />
               <p className="text-[#AAAAAA]">peet.werapat</p>
             </div>
           </div>

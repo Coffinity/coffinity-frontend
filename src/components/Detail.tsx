@@ -2,21 +2,21 @@ import Carousel from './Carousel'
 
 export default function Detail() {
   const images = [
-    'src/assets/carousel/CS.1.png',
-    'src/assets/carousel/CS.2.png',
-    'src/assets/carousel/CS.3.png',
-    'src/assets/carousel/CS.4.png',
-    'src/assets/carousel/CS.5.png',
-    'src/assets/carousel/CS.6.png',
-    'src/assets/carousel/CS.7.png',
-    'src/assets/carousel/CS.8.png',
-    'src/assets/carousel/CS.9.png',
-    'src/assets/carousel/CS.10.png',
+    'assets/carousel/CS.1.png',
+    'assets/carousel/CS.2.png',
+    'assets/carousel/CS.3.png',
+    'assets/carousel/CS.4.png',
+    'assets/carousel/CS.5.png',
+    'assets/carousel/CS.6.png',
+    'assets/carousel/CS.7.png',
+    'assets/carousel/CS.8.png',
+    'assets/carousel/CS.9.png',
+    'assets/carousel/CS.10.png',
   ]
   return (
     <div className="">
       <div className="grid justify-items-center">
-        <img src="src/assets/Header2.png" />
+        <img src="assets/Header2.png" />
       </div>
 
       <div className="flex flex-col gap-y-[152px]">
@@ -35,7 +35,7 @@ export default function Detail() {
         </div>
         <div className="flex flex-col items-center">
           <div className="flex w-full justify-between items-center max-w-[1020px]">
-            <img src="src/assets/Brew.png" className="w-[450px] h-[450px] place-items-center flex items-center" />
+            <img src="assets/Brew.png" className="w-[450px] h-[450px] place-items-center flex items-center" />
             <div className="flex flex-col">
               <div className="text-stone-600 text-[30px] font-bold  tracking-[9.60px] place-items-center ">
                 DHAMAJATI

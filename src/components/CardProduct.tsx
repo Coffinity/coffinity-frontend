@@ -6,7 +6,7 @@ const CardProduct = () => {
   return (
     <div className="relative m-10 flex w-full h-max max-w-xs flex-col overflow-hidden rounded-lg bg-transparent shadow-[0_0_50px_0 rgb(0 0 0 / 0.1)">
       <a className="flex rounded-xl items-center" href="#">
-        <img className="" src="src/assets/Test Product.png" alt="product image" />
+        <img className="" src="assets/Test Product.png" alt="product image" />
       </a>
       <div className="mt-4 px-5 pb-5 flex flex-col text-center">
         <a href="#">
