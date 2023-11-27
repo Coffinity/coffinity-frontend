@@ -55,7 +55,7 @@ export const CreateProduct = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="h-screen flex justify-center items-center" onSubmit={handleSubmit}>
       <label>Product Name</label>
       <input type="text" onChange={(e) => setNewProductName(e.target.value)} required />
       <label>Product Description</label>
