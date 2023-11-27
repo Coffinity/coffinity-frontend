@@ -157,34 +157,59 @@ export const Checkout = () => {
             </div>
             <div className="bg-white bg-opacity-80 px-8 py-8 lg:mt-0 rounded-lg h-[386px] overflow-y-auto">
               <div className="">
-                <div className="">
-                  <div className="flex rounded-lg  sm:flex-row">
-                    <img
-                      className="m-2 h-24 w-28 object-cover object-center"
-                      src="src/assets/Test Product.png"
-                      alt="product image"
-                    />
-                    <div className="flex w-full flex-col px-4 py-4">
-                      <span className="text-l font-semibold text-black">Dhamajati Balance</span>
-                      <span className="text-sm font-normal text-gray-500">200g</span>
-                      <p className="text-l font-semibold text-black">400.00 ฿</p>
-                    </div>
+                <div className="flex rounded-lg  sm:flex-row">
+                  <img
+                    className="m-2 h-24 w-28 object-cover object-center"
+                    src="src/assets/Test Product.png"
+                    alt="product image"
+                  />
+                  <div className="flex w-full flex-col px-4 py-4">
+                    <span className="text-l font-semibold text-black">Dhamajati Balance</span>
+                    <span className="text-sm font-normal text-gray-500">200g</span>
+                    <p className="text-l font-semibold text-black">400.00 ฿</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="">
+                <div className="flex rounded-lg  sm:flex-row">
+                  <img
+                    className="m-2 h-24 w-28 object-cover object-center"
+                    src="src/assets/Test Product.png"
+                    alt="product image"
+                  />
+                  <div className="flex w-full flex-col px-4 py-4">
+                    <span className="text-l font-semibold text-black">Dhamajati Balance</span>
+                    <span className="text-sm font-normal text-gray-500">200g</span>
+                    <p className="text-l font-semibold text-black">400.00 ฿</p>
                   </div>
                 </div>
               </div>
               <div className="">
-                <div className="">
-                  <div className="flex rounded-lg  sm:flex-row">
-                    <img
-                      className="m-2 h-24 w-28 object-cover object-center"
-                      src="src/assets/Test Product.png"
-                      alt="product image"
-                    />
-                    <div className="flex w-full flex-col px-4 py-4">
-                      <span className="text-l font-semibold text-black">Dhamajati Balance</span>
-                      <span className="text-sm font-normal text-gray-500">200g</span>
-                      <p className="text-l font-semibold text-black">400.00 ฿</p>
-                    </div>
+                <div className="flex rounded-lg  sm:flex-row">
+                  <img
+                    className="m-2 h-24 w-28 object-cover object-center"
+                    src="src/assets/Test Product.png"
+                    alt="product image"
+                  />
+                  <div className="flex w-full flex-col px-4 py-4">
+                    <span className="text-l font-semibold text-black">Dhamajati Balance</span>
+                    <span className="text-sm font-normal text-gray-500">200g</span>
+                    <p className="text-l font-semibold text-black">400.00 ฿</p>
+                  </div>
+                </div>
+              </div>
+              <div className="">
+                <div className="flex rounded-lg  sm:flex-row">
+                  <img
+                    className="m-2 h-24 w-28 object-cover object-center"
+                    src="src/assets/Test Product.png"
+                    alt="product image"
+                  />
+                  <div className="flex w-full flex-col px-4 py-4">
+                    <span className="text-l font-semibold text-black">Dhamajati Balance</span>
+                    <span className="text-sm font-normal text-gray-500">200g</span>
+                    <p className="text-l font-semibold text-black">400.00 ฿</p>
                   </div>
                 </div>
               </div>

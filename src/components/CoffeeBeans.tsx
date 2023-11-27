@@ -1,5 +1,5 @@
 import AllCardProductHover from './AllCardProductHover'
-import { FC, useEffect, useState } from 'react'
+import { FC } from 'react'
 import CustomCarousel from './CustomCarousel'
 import useProducts from '../hooks/useProducts'
 import { IProductDTO } from '../types/dto'
@@ -9,15 +9,8 @@ interface Props {
 }
 
 const CoffeeBeans: FC<Props> = ({ coffeeBeanRef }) => {
-  const { products } = useProducts()
-  const [displayProduct, setDisplayProduct] = useState<IProductDTO[][]>([])
-
-  useEffect(() => {
-    if (products) {
-      console.log(convertArray(products))
-      setDisplayProduct(convertArray(products))
-    }
-  }, [products])
+  const { products, filterProduct } = useProducts()
+  const filteredProducts = convertArray(filterProduct(products, 'type', 'Coffee Beans'))
 
   function convertArray(oldArray: IProductDTO[]): IProductDTO[][] {
     const newArray: IProductDTO[][] = []
@@ -35,7 +28,7 @@ const CoffeeBeans: FC<Props> = ({ coffeeBeanRef }) => {
       <div className="w-4/5 mx-auto">
         <h1 className="font-bold text-[30px] text-[#585252]">HOUSE BLEND</h1>
         <CustomCarousel>
-          {displayProduct.map((items, index) => (
+          {filteredProducts.map((items, index) => (
             <AllCardProductHover items={items} key={index} />
           ))}
         </CustomCarousel>
@@ -43,7 +36,7 @@ const CoffeeBeans: FC<Props> = ({ coffeeBeanRef }) => {
       <div className="w-4/5 mx-auto">
         <h1 className="font-bold text-[30px] text-[#585252]">SINGLE ORIGIN</h1>
         <CustomCarousel>
-          {displayProduct.map((items, index) => (
+          {filteredProducts.map((items, index) => (
             <AllCardProductHover items={items} key={index} />
           ))}
         </CustomCarousel>
