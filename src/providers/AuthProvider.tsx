@@ -2,6 +2,7 @@ import { ReactNode, createContext, useContext, useState } from 'react'
 import { IAccessToken, ICreateUserDTO, ILogin, IUserDTO } from '../types/dto'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { API_HOST } from '../const'
 
 interface IAuthProviderProps {
   children: ReactNode
@@ -35,7 +36,7 @@ const AuthProvider = ({ children }: IAuthProviderProps) => {
 
   const register = async (registerBody: ICreateUserDTO) => {
     try {
-      await axios.post<IUserDTO>('http://localhost:8080/users', registerBody, {
+      await axios.post<IUserDTO>(`${API_HOST}:8080/users`, registerBody, {
         headers: { 'Content-Type': 'application/json' },
       })
       navigate('/login')
@@ -48,7 +49,7 @@ const AuthProvider = ({ children }: IAuthProviderProps) => {
     const { username } = loginBody
 
     try {
-      const res = await axios.post<IAccessToken>('http://localhost:8080/auth/login', loginBody, {
+      const res = await axios.post<IAccessToken>(`${API_HOST}:8080/auth/login`, loginBody, {
         headers: { 'Content-Type': 'application/json' },
       })
 
