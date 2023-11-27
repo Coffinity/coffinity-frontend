@@ -26,13 +26,13 @@ const Navbar: FC<Props> = ({ onCoffeeBeanCick, onEquipmentClick, onFooterClick }
     <div>
       <div className="navbar w-full z-50 fixed bg-black text-neutral-content bg-opacity-50 justify-between">
         <div className="flex">
-          <a href="/">
+          <Link to="/">
             <h1 className="text-white m-5 font-kanit text-4xl">ดัมมะชาติ</h1>
-          </a>
+          </Link>
           <div className="flex py-10 mt-13">
-            <a href="/">
+            <Link to="/">
               <button className="hover:text-white px-5">HOME</button>
-            </a>
+            </Link>
 
             {!isShow && (
               <div>
@@ -61,22 +61,22 @@ const Navbar: FC<Props> = ({ onCoffeeBeanCick, onEquipmentClick, onFooterClick }
           </div>
           {isLoggedIn ? (
             <>
-              <a href="/profile">
+              <Link to="/profile">
                 <PersonIcon sx={{ fontSize: 40 }} className="ml-5 text-white text-5xl item-center" />
-              </a>
+              </Link>
               <button className="text-white mx-5" onClick={logout}>
                 Log out
               </button>
             </>
           ) : (
             <div className="flex">
-              <a href="/register">
+              <Link to="/register">
                 <p className="text-white mx-10">REGISTER</p>
-              </a>
+              </Link>
               <p className="text-white">/</p>
-              <a href="/login">
+              <Link to="/login">
                 <p className="text-white mx-10">SIGN IN</p>
-              </a>
+              </Link>
             </div>
           )}
         </div>
