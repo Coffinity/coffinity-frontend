@@ -1,6 +1,8 @@
 import LocalMallIcon from '@mui/icons-material/LocalMall'
 import { FC } from 'react'
 import { useLocation } from 'react-router-dom'
+import { useAuth } from '../providers/AuthProvider'
+import PersonIcon from '@mui/icons-material/Person'
 
 interface Props {
   onCoffeeBeanCick: () => void
@@ -9,6 +11,7 @@ interface Props {
 }
 
 const Navbar: FC<Props> = ({ onCoffeeBeanCick, onEquipmentClick, onFooterClick }) => {
+  const { isLoggedIn, logout } = useAuth()
   const nevigate = useLocation()
   console.log(nevigate.pathname)
 
@@ -55,15 +58,26 @@ const Navbar: FC<Props> = ({ onCoffeeBeanCick, onEquipmentClick, onFooterClick }
               <LocalMallIcon sx={{ fontSize: 40 }} className="text-white text-5xl item-center" />
             </a>
           </div>
-          <div className="flex">
-            <a href="/register">
-              <p className="text-white mx-10">REGISTER</p>
-            </a>
-            <p className="text-white">/</p>
-            <a href="/login">
-              <p className="text-white mx-10">SIGN IN</p>
-            </a>
-          </div>
+          {isLoggedIn ? (
+            <>
+              <a href="/profile">
+                <PersonIcon sx={{ fontSize: 40 }} className="ml-5 text-white text-5xl item-center" />
+              </a>
+              <button className="text-white mx-5" onClick={logout}>
+                Log out
+              </button>
+            </>
+          ) : (
+            <div className="flex">
+              <a href="/register">
+                <p className="text-white mx-10">REGISTER</p>
+              </a>
+              <p className="text-white">/</p>
+              <a href="/login">
+                <p className="text-white mx-10">SIGN IN</p>
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </div>

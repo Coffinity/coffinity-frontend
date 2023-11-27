@@ -64,7 +64,6 @@ export const CreateProduct = () => {
         <label>Image</label>
         <input type="file" accept="image/" onChange={handleProductImageUpload} required />
 
-
         <select
           className="select select-bordered w-full max-w-xs"
           defaultValue={newTypes}
@@ -85,8 +84,7 @@ export const CreateProduct = () => {
         <div>
           {newImage ? (
             <div>
-              {' '}
-              <img src={newImage as string} alt="product image" />{' '}
+              <img src={newImage as string} alt="product image" />
             </div>
           ) : (
             <p>Image preview will appear here!</p>
