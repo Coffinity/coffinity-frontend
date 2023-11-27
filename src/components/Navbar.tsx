@@ -3,6 +3,7 @@ import { FC } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useAuth } from '../providers/AuthProvider'
 import PersonIcon from '@mui/icons-material/Person'
+import { Link } from 'react-router-dom'
 
 interface Props {
   onCoffeeBeanCick: () => void
@@ -54,9 +55,9 @@ const Navbar: FC<Props> = ({ onCoffeeBeanCick, onEquipmentClick, onFooterClick }
             <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
             {/* <SearchIcon fontSize="large" className="text-white large " /> */}
 
-            <a href="/cart">
+            <Link to="/cart">
               <LocalMallIcon sx={{ fontSize: 40 }} className="text-white text-5xl item-center" />
-            </a>
+            </Link>
           </div>
           {isLoggedIn ? (
             <>
