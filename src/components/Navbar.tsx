@@ -59,17 +59,19 @@ const Navbar: FC<Props> = ({ onCoffeeBeanCick, onEquipmentClick, onFooterClick }
             {/* <SearchIcon fontSize="large" className="text-white large " /> */}
 
             <Link to="/cart">
+
               <LocalMallIcon sx={{ fontSize: 40 }} className="text-white text-5xl item-center absolute" />
               <div className="badge relative left-5 top-0 bg-red-600 text-white border-white">
                 {cartState.cartList.length}
               </div>
+
             </Link>
           </div>
 
           {isLoggedIn ? (
             <>
               <Link to="/profile">
-                <PersonIcon sx={{ fontSize: 40 }} className="ml-5 text-white text-5xl item-center" />
+                <PersonIcon sx={{ fontSize: 45 }} className="ml-5 text-white text-5xl item-center" />
               </Link>
               <button className="text-white mx-5" onClick={logout}>
                 Log out
