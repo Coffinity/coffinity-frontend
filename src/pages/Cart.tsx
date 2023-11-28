@@ -1,7 +1,32 @@
-import { useState } from 'react'
+import { useContext } from 'react'
+import { CartContext, CartItem } from '../providers/CartProvider'
+import { useAuth } from '../providers/AuthProvider'
+import { useNavigate } from 'react-router-dom'
 
 export const Cart = () => {
-  const [quantityProduct, setQuantityProduct] = useState<number>(1)
+  const { isLoggedIn } = useAuth()
+  const navigate = useNavigate()
+  const { cartState, updateCartItem, removeCartItem } = useContext(CartContext)
+  const { cartList, totalPrice } = cartState
+
+  const onDecreaseItemCart = (item: CartItem) => {
+    updateCartItem(item, item.quantity - 1)
+  }
+
+  const onIncreaseItemCart = (item: CartItem) => {
+    updateCartItem(item, item.quantity + 1)
+  }
+
+  const onRemoveItemCart = (item: CartItem) => {
+    removeCartItem(item)
+  }
+
+  const onCheckout = () => {
+    if (!isLoggedIn) {
+      navigate('/login')
+    }
+  }
+
   return (
     <div className="h-screen flex justify-center items-center bg-allPageBg bg-cover">
       <section className="relative  rounded-md bg-white bg-opacity-80 p-6 lg:p-10 border border-gray-100">
@@ -16,81 +41,87 @@ export const Cart = () => {
               <div className="w-full">
                 <div className="flow-root">
                   <ul className="">
-                    <li className="flex flex-col space-y-3 py-6 text-left sm:flex-row sm:space-x-5 sm:space-y-0 bg-red">
-                      <div className="shrink-0">
-                        <img
-                          className="h-24 w-24 max-w-full rounded-lg object-cover"
-                          src="assets/Test Product.png"
-                          alt="product image"
-                        />
-                      </div>
+                    {cartList.map((item, index) => (
+                      <li
+                        key={index}
+                        className="flex flex-col space-y-3 py-6 text-left sm:flex-row sm:space-x-5 sm:space-y-0 bg-red"
+                      >
+                        <div className="shrink-0">
+                          <img
+                            className="h-24 w-24 max-w-full rounded-lg object-cover"
+                            src={item.image}
+                            alt="product image"
+                          />
+                        </div>
 
-                      <div className="relative flex flex-1 flex-col justify-between">
-                        <div className="sm:col-gap-5 sm:grid sm:grid-cols-2">
-                          <div className="pr-8 sm:pr-5">
-                            <p className="text-base font-semibold text-gray-900">Dhamajati Balance</p>
-                            <p className="mx-0 mt-1 mb-0 text-sm font-normal text-gray-500">200g</p>
-                          </div>
+                        <div className="relative flex flex-1 flex-col justify-between">
+                          <div className="sm:col-gap-5 sm:grid sm:grid-cols-2">
+                            <div className="pr-8 sm:pr-5">
+                              <p className="text-base font-semibold text-gray-900">{item.name}</p>
+                              <p className="mx-0 mt-1 mb-0 text-sm font-normal text-gray-500">{item.description}</p>
+                            </div>
 
-                          <div className="mt-4 flex items-end justify-between sm:mt-0 sm:items-start sm:justify-end">
-                            <p className="shrink-0 w-20 text-sm font-bold text-gray-700 sm:order-2 sm:ml-8 sm:text-right ">
-                              400.00 ฿
-                            </p>
+                            <div className="mt-4 flex items-end justify-between sm:mt-0 sm:items-start sm:justify-end">
+                              <p className="shrink-0 w-20 text-sm font-bold text-gray-700 sm:order-2 sm:ml-8 sm:text-right ">
+                                {item.price * item.quantity}
+                              </p>
 
-                            <div className="sm:order-1">
-                              <div className="mx-auto flex h-8 items-stretch text-gray-600">
-                                <button
-                                  className="flex items-center justify-center rounded-l-md bg-gray-200 px-4 transition hover:bg-black hover:text-white"
-                                  onClick={() => setQuantityProduct(quantityProduct - 1)}
-                                  disabled={quantityProduct === 1}
-                                >
-                                  -
-                                </button>
-                                <div className="flex w-full items-center justify-center bg-gray-100 px-4 text-xs uppercase transition">
-                                  <p>{quantityProduct}</p>
+                              <div className="sm:order-1">
+                                <div className="mx-auto flex h-8 items-stretch text-gray-600">
+                                  <button
+                                    className="flex items-center justify-center rounded-l-md bg-gray-200 px-4 transition hover:bg-black hover:text-white"
+                                    onClick={() => onDecreaseItemCart(item)}
+                                    disabled={item.quantity === 1}
+                                  >
+                                    -
+                                  </button>
+                                  <div className="flex w-full items-center justify-center bg-gray-100 px-4 text-xs uppercase transition">
+                                    <p>{item.quantity}</p>
+                                  </div>
+                                  <button
+                                    className="flex items-center justify-center rounded-r-md bg-gray-200 px-4 transition hover:bg-black hover:text-white"
+                                    onClick={() => onIncreaseItemCart(item)}
+                                  >
+                                    +
+                                  </button>
                                 </div>
-                                <button
-                                  className="flex items-center justify-center rounded-r-md bg-gray-200 px-4 transition hover:bg-black hover:text-white"
-                                  onClick={() => setQuantityProduct(quantityProduct + 1)}
-                                >
-                                  +
-                                </button>
                               </div>
                             </div>
                           </div>
-                        </div>
 
-                        <div className="absolute top-0 right-0 flex sm:bottom-0 sm:top-auto">
-                          <button
-                            type="button"
-                            className="flex rounded p-2 text-center text-gray-500 transition-all duration-200 ease-in-out focus:shadow hover:text-gray-900"
-                          >
-                            <svg
-                              className="h-5 w-5"
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
+                          <div className="absolute top-0 right-0 flex sm:bottom-0 sm:top-auto">
+                            <button
+                              onClick={() => onRemoveItemCart(item)}
+                              type="button"
+                              className="flex rounded p-2 text-center text-gray-500 transition-all duration-200 ease-in-out focus:shadow hover:text-gray-900"
                             >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M6 18L18 6M6 6l12 12"
-                                className=""
-                              ></path>
-                            </svg>
-                          </button>
+                              <svg
+                                className="h-5 w-5"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2"
+                                  d="M6 18L18 6M6 6l12 12"
+                                  className=""
+                                ></path>
+                              </svg>
+                            </button>
+                          </div>
                         </div>
-                      </div>
-                    </li>
+                      </li>
+                    ))}
                   </ul>
                 </div>
 
                 <div className="mt-6 border-t border-b py-2 border-black">
                   <div className="flex items-center justify-between">
                     <p className="text-sm font-normal text-gray-500">Subtotal</p>
-                    <p className="text-sm font-bold text-gray-700 sm:px-6">400.00 ฿</p>
+                    <p className="text-sm font-bold text-gray-700 sm:px-6">{totalPrice} THB</p>
                   </div>
                   <div className="flex items-center justify-between">
                     <p className="text-sm font-normal text-gray-500">Shipping</p>
@@ -100,12 +131,13 @@ export const Cart = () => {
                 <div className="mt-6 flex items-center justify-between">
                   <p className="text-sm font-medium text-gray-900">Total</p>
                   <p className="text-2xl font-semibold text-gray-900">
-                    <span className="text-xs font-normal text-gray-400">THB</span> 400.00
+                    <span className="text-xs font-normal text-gray-400">THB</span> {totalPrice}
                   </p>
                 </div>
 
                 <div className="mt-6 text-center">
                   <button
+                    onClick={() => onCheckout()}
                     type="button"
                     className="group inline-flex w-full items-center justify-center rounded-md bg-black px-6 py-4 text-lg font-semibold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-500"
                   >

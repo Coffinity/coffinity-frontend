@@ -1,13 +1,22 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { IProductDTO } from '../types/dto'
 import { FC } from 'react'
+import { CartContext } from '../providers/CartProvider'
 
 export interface IProductProps {
   cardProductHover: IProductDTO
 }
 
 export const CardProductHover: FC<IProductProps> = ({ cardProductHover }) => {
+  const { cartState, addCartItem, updateCartItem } = useContext(CartContext)
   const [quantityProduct, setQuantityProduct] = useState<number>(1)
+
+  const onAddToCartClick = () => {
+    addCartItem({
+      ...cardProductHover,
+      quantity: quantityProduct,
+    })
+  }
 
   return (
     <div className="relative m-10 flex w-full h-max max-w-xs flex-col overflow-hidden rounded-lg bg-transparent shadow-[0_0_50px_0 rgb(0 0 0 / 0.1)">
@@ -46,8 +55,8 @@ export const CardProductHover: FC<IProductProps> = ({ cardProductHover }) => {
           </div>
         </div>
       </div>
-      <a
-        href="#"
+      <button
+        onClick={() => onAddToCartClick()}
         className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
       >
         <svg
@@ -65,7 +74,7 @@ export const CardProductHover: FC<IProductProps> = ({ cardProductHover }) => {
           />
         </svg>
         Add to cart
-      </a>
+      </button>
     </div>
   )
 }
