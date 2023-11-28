@@ -2,16 +2,15 @@ export const persistState = (storageKey: string, state: object): void => {
   window.localStorage.setItem(storageKey, JSON.stringify(state))
 }
 
-export const getIntialState = (storageKey: string): any => {
+export const getIntialState = <T>(storageKey: string, defaultValue?: T): T | undefined => {
   const savedState = window.localStorage.getItem(storageKey)
   try {
     if (!savedState) {
-      return undefined
+      return defaultValue
     }
-    return JSON.parse(savedState ?? '{}')
+    return JSON.parse(savedState)
   } catch (e) {
-    console.error('Error loading state : ' + storageKey)
-    return undefined
+    return defaultValue
   }
 }
 

@@ -8,7 +8,7 @@ export interface IProductProps {
 }
 
 export const CardProductHover: FC<IProductProps> = ({ cardProductHover }) => {
-  const { cartState, addCartItem, updateCartItem } = useContext(CartContext)
+  const { addCartItem } = useContext(CartContext)
   const [quantityProduct, setQuantityProduct] = useState<number>(1)
 
   const onAddToCartClick = () => {
