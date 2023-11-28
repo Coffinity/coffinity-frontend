@@ -1,25 +1,35 @@
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../providers/AuthProvider'
 import { FormEvent, useState } from 'react'
+import toast from 'react-hot-toast'
 
 export default function Register() {
   const { register } = useAuth()
   const navigate = useNavigate()
   const [username, setUsername] = useState<string>('')
   const [password, setPassword] = useState<string>('')
+  const [confirmPassword, setConfirmPassword] = useState<string>('')
   const [email, setEmail] = useState<string>('')
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
 
     try {
+      if (password !== confirmPassword) {
+        toast.error('Password do not match')
+        return
+      }
       await register({ username, password, email })
 
-      navigate('/')
+      toast.success('Register Success')
+
+      navigate('/login')
     } catch (err) {
       console.log(err)
+      toast.error('Username or Email already exist')
     }
   }
+
   return (
     <div className="h-screen flex justify-center items-center bg-allPageBg bg-cover ">
       <form
@@ -34,6 +44,7 @@ export default function Register() {
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Username"
           className="mt-2 h-12 w-full rounded-md bg-gray-100 px-3 outline-none focus:ring"
+          required
         />
 
         <div className="">
@@ -43,6 +54,7 @@ export default function Register() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Info@example.com"
             className="mt-2 h-12 w-full rounded-md bg-gray-100 px-3 outline-none focus:ring"
+            required
           />
         </div>
         <div>
@@ -52,15 +64,17 @@ export default function Register() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="******"
             className="mt-2 h-12 w-full rounded-md bg-gray-100 px-3 outline-none focus:ring"
+            required
           />
         </div>
         <div>
           <label className=""> Confirm Password </label>
           <input
             type="password"
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setConfirmPassword(e.target.value)}
             placeholder="******"
             className="mt-2 h-12 w-full rounded-md bg-gray-100 px-3 outline-none focus:ring"
+            required
           />
         </div>
 

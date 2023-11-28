@@ -5,6 +5,7 @@ import { useAuth } from '../providers/AuthProvider'
 import PersonIcon from '@mui/icons-material/Person'
 import { CartContext } from '../providers/CartProvider'
 import { Link } from 'react-router-dom'
+import toast from 'react-hot-toast'
 
 interface Props {
   onCoffeeBeanCick: () => void
@@ -15,6 +16,10 @@ interface Props {
 const Navbar: FC<Props> = ({ onCoffeeBeanCick, onEquipmentClick, onFooterClick }) => {
   const { cartState } = useContext(CartContext)
   const { isLoggedIn, logout } = useAuth()
+  const handleLogout = () => {
+    logout()
+    toast.success('Logout Success')
+  }
   const nevigate = useLocation()
   console.log(nevigate.pathname)
 
@@ -57,12 +62,10 @@ const Navbar: FC<Props> = ({ onCoffeeBeanCick, onEquipmentClick, onFooterClick }
             {/* <SearchIcon fontSize="large" className="text-white large " /> */}
 
             <Link to="/cart">
-
               <LocalMallIcon sx={{ fontSize: 40 }} className="text-white text-5xl item-center absolute" />
               <div className="badge relative left-5 top-0 bg-red-600 text-white border-white">
                 {cartState.cartList.length}
               </div>
-
             </Link>
           </div>
 
@@ -71,7 +74,7 @@ const Navbar: FC<Props> = ({ onCoffeeBeanCick, onEquipmentClick, onFooterClick }
               <Link to="/profile">
                 <PersonIcon sx={{ fontSize: 45 }} className="ml-5 text-white text-5xl item-center" />
               </Link>
-              <button className="text-white mx-5" onClick={logout}>
+              <button className="text-white mx-5" onClick={handleLogout}>
                 Log out
               </button>
             </>
