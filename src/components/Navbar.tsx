@@ -1,8 +1,9 @@
 import LocalMallIcon from '@mui/icons-material/LocalMall'
-import { FC } from 'react'
+import { FC, useContext } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useAuth } from '../providers/AuthProvider'
 import PersonIcon from '@mui/icons-material/Person'
+import { CartContext } from '../providers/CartProvider'
 
 interface Props {
   onCoffeeBeanCick: () => void
@@ -11,6 +12,7 @@ interface Props {
 }
 
 const Navbar: FC<Props> = ({ onCoffeeBeanCick, onEquipmentClick, onFooterClick }) => {
+  const { cartState } = useContext(CartContext)
   const { isLoggedIn, logout } = useAuth()
   const nevigate = useLocation()
   console.log(nevigate.pathname)
@@ -39,7 +41,6 @@ const Navbar: FC<Props> = ({ onCoffeeBeanCick, onEquipmentClick, onFooterClick }
                   COFFEE
                 </button>
                 <button className="hover:text-white px-5" onClick={onEquipmentClick}>
-                  {' '}
                   EQUIPMENT
                 </button>
                 <button className="hover:text-white px-5" onClick={onFooterClick}>
@@ -55,7 +56,8 @@ const Navbar: FC<Props> = ({ onCoffeeBeanCick, onEquipmentClick, onFooterClick }
             {/* <SearchIcon fontSize="large" className="text-white large " /> */}
 
             <a href="/cart">
-              <LocalMallIcon sx={{ fontSize: 40 }} className="text-white text-5xl item-center" />
+              <LocalMallIcon sx={{ fontSize: 40 }} className="text-white text-5xl item-center absolute" />
+              <div className="badge badge-secondary relative left-6 top-0">{cartState.cartList.length}</div>
             </a>
           </div>
           {isLoggedIn ? (

@@ -29,10 +29,7 @@ const CardProduct = () => {
           </div>
         </div>
       </div>
-      <a
-        href="#"
-        className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
-      >
+      <button className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="mr-2 h-6 w-6"
@@ -48,7 +45,7 @@ const CardProduct = () => {
           />
         </svg>
         Add to cart
-      </a>
+      </button>
     </div>
   )
 }
