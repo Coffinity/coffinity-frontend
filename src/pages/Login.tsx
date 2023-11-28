@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../providers/AuthProvider'
 import { FormEvent, useState } from 'react'
+import toast from 'react-hot-toast'
 
 export default function Login() {
   const { login } = useAuth()
@@ -13,10 +14,11 @@ export default function Login() {
 
     try {
       await login({ username, password })
-
+      toast.success('Sign In Success')
       navigate('/')
     } catch (err) {
       console.log(err)
+      toast.error('Incorrect username or password')
     }
   }
 
@@ -35,6 +37,7 @@ export default function Login() {
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Username"
           className="mt-2 h-12 w-full rounded-md bg-gray-100 px-3 outline-none focus:ring"
+          required
         />
 
         <div>
@@ -44,6 +47,7 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="******"
             className="mt-2 h-12 w-full rounded-md bg-gray-100 px-3 outline-none focus:ring"
+            required
           />
         </div>
 

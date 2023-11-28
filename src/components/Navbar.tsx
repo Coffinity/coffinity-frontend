@@ -3,9 +3,7 @@ import { FC, useContext } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useAuth } from '../providers/AuthProvider'
 import PersonIcon from '@mui/icons-material/Person'
-
 import { CartContext } from '../providers/CartProvider'
-
 import { Link } from 'react-router-dom'
 
 interface Props {
