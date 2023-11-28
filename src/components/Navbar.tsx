@@ -3,7 +3,11 @@ import { FC, useContext } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useAuth } from '../providers/AuthProvider'
 import PersonIcon from '@mui/icons-material/Person'
+
 import { CartContext } from '../providers/CartProvider'
+
+import { Link } from 'react-router-dom'
+
 
 interface Props {
   onCoffeeBeanCick: () => void
@@ -27,13 +31,13 @@ const Navbar: FC<Props> = ({ onCoffeeBeanCick, onEquipmentClick, onFooterClick }
     <div>
       <div className="navbar w-full z-50 fixed bg-black text-neutral-content bg-opacity-50 justify-between">
         <div className="flex">
-          <a href="/">
+          <Link to="/">
             <h1 className="text-white m-5 font-kanit text-4xl">ดัมมะชาติ</h1>
-          </a>
+          </Link>
           <div className="flex py-10 mt-13">
-            <a href="/">
+            <Link to="/">
               <button className="hover:text-white px-5">HOME</button>
-            </a>
+            </Link>
 
             {!isShow && (
               <div>
@@ -55,29 +59,30 @@ const Navbar: FC<Props> = ({ onCoffeeBeanCick, onEquipmentClick, onFooterClick }
             <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
             {/* <SearchIcon fontSize="large" className="text-white large " /> */}
 
-            <a href="/cart">
-              <LocalMallIcon sx={{ fontSize: 40 }} className="text-white text-5xl item-center absolute" />
-              <div className="badge badge-secondary relative left-6 top-0">{cartState.cartList.length}</div>
-            </a>
+
+            <Link to="/cart">
+              <LocalMallIcon sx={{ fontSize: 40 }} className="text-white text-5xl item-center" />
+            </Link>
+
           </div>
           {isLoggedIn ? (
             <>
-              <a href="/profile">
+              <Link to="/profile">
                 <PersonIcon sx={{ fontSize: 40 }} className="ml-5 text-white text-5xl item-center" />
-              </a>
+              </Link>
               <button className="text-white mx-5" onClick={logout}>
                 Log out
               </button>
             </>
           ) : (
             <div className="flex">
-              <a href="/register">
+              <Link to="/register">
                 <p className="text-white mx-10">REGISTER</p>
-              </a>
+              </Link>
               <p className="text-white">/</p>
-              <a href="/login">
+              <Link to="/login">
                 <p className="text-white mx-10">SIGN IN</p>
-              </a>
+              </Link>
             </div>
           )}
         </div>
