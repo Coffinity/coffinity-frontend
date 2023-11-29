@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { CartContext, CartItem } from '../providers/CartProvider'
 import { useAuth } from '../providers/AuthProvider'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export const Cart = () => {
   const { isLoggedIn } = useAuth()
@@ -24,12 +25,15 @@ export const Cart = () => {
   const onCheckout = () => {
     if (!isLoggedIn) {
       navigate('/login')
+      return
     }
+
+    navigate('/checkout')
   }
 
   return (
-    <div className="h-screen flex justify-center items-center bg-allPageBg bg-cover">
-      <section className="relative  rounded-md bg-white bg-opacity-80 p-6 lg:p-10 border border-gray-100">
+    <div className="min-h-screen flex justify-center items-center bg-allPageBg bg-cover">
+      <section className="relative mt-56 mb-36 rounded-md bg-white bg-opacity-80 p-6 lg:p-10 border border-gray-100">
         {/* relative w-1/2 bg-white shadow-xl p-10 rounded-md bg-opacity-80 mt-52 mb-28 text-black border border-gray-100 */}
         <div className="">
           <div className="flex items-center justify-center">
@@ -90,27 +94,31 @@ export const Cart = () => {
                           </div>
 
                           <div className="absolute top-0 right-0 flex sm:bottom-0 sm:top-auto">
-                            <button
-                              onClick={() => onRemoveItemCart(item)}
-                              type="button"
-                              className="flex rounded p-2 text-center text-gray-500 transition-all duration-200 ease-in-out focus:shadow hover:text-gray-900"
-                            >
-                              <svg
-                                className="h-5 w-5"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
+                            isLoggedIn ? (
+                            <Link to="/checkout">
+                              <button
+                                onClick={() => onRemoveItemCart(item)}
+                                type="button"
+                                className="flex rounded p-2 text-center text-gray-500 transition-all duration-200 ease-in-out focus:shadow hover:text-gray-900"
                               >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth="2"
-                                  d="M6 18L18 6M6 6l12 12"
-                                  className=""
-                                ></path>
-                              </svg>
-                            </button>
+                                <svg
+                                  className="h-5 w-5"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M6 18L18 6M6 6l12 12"
+                                    className=""
+                                  ></path>
+                                </svg>
+                              </button>
+                            </Link>
+                            )
                           </div>
                         </div>
                       </li>

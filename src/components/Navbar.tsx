@@ -8,7 +8,6 @@ import { CartContext } from '../providers/CartProvider'
 
 import { Link } from 'react-router-dom'
 
-
 interface Props {
   onCoffeeBeanCick: () => void
   onEquipmentClick: () => void
@@ -59,12 +58,14 @@ const Navbar: FC<Props> = ({ onCoffeeBeanCick, onEquipmentClick, onFooterClick }
             <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
             {/* <SearchIcon fontSize="large" className="text-white large " /> */}
 
-
             <Link to="/cart">
-              <LocalMallIcon sx={{ fontSize: 40 }} className="text-white text-5xl item-center" />
+              <LocalMallIcon sx={{ fontSize: 40 }} className="text-white text-5xl item-center absolute" />
+              <div className="badge relative left-5 top-0 bg-red-600 text-white border-white">
+                {cartState.cartList.length}
+              </div>
             </Link>
-
           </div>
+
           {isLoggedIn ? (
             <>
               <Link to="/profile">
