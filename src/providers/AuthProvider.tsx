@@ -69,6 +69,8 @@ const AuthProvider = ({ children }: IAuthProviderProps) => {
     setUsername(null)
 
     navigate('/')
+    // reload page when user logout
+    window.location.reload()
   }
 
   return (

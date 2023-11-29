@@ -8,7 +8,7 @@ interface Props {
 
 const AllCardProductHover: FC<Props> = ({ items }) => {
   return (
-    <div className="flex w-full mx-auto">
+    <div className="flex w-full mx-auto justify-center">
       {items &&
         items.map((item) => {
           return <CardProductHover key={item.id} cardProductHover={item} />

@@ -4,9 +4,9 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        footerTexture: "url('footerBackground.png')",
-        header: 'url("Header.jpg")',
-        allPageBg: 'url("BGpage.jpg")',
+        footerTexture: "url('/assets/footerBackground.png')",
+        header: 'url("/assets/Header.jpg")',
+        allPageBg: 'url("/assets/BGpage.jpg")',
       },
       fontFamily: {
         kanit: ['Chonburi', 'serif'],
