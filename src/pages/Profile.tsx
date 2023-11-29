@@ -1,10 +1,10 @@
-import { IUserDTO } from '../types/dto'
+import useProfile from '../hooks/userProfile'
 
-interface IProfileProps {
-  userInfo: IUserDTO
-}
+export const Profile = () => {
+  const { profile: userInfo } = useProfile()
 
-export const Profile = ({ userInfo }: IProfileProps) => {
+  if (!userInfo) return null
+
   return (
     <div>
       <div className="min-h-screen w-full flex justify-center items-center bg-allPageBg bg-cover bg-fixed ">
