@@ -12,7 +12,7 @@ const useProfile = () => {
       const token = localStorage.getItem('token')
       setIsLoading(true)
       try {
-        const res = await axios.get<IUserDTO>(`${API_HOST}/products`, {
+        const res = await axios.get<IUserDTO>(`${API_HOST}/mine/info`, {
           headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         })
 
