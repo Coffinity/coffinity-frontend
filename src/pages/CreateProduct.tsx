@@ -7,8 +7,8 @@ export const CreateProduct = () => {
   const navigate = useNavigate()
   const [newProductName, setNewProductName] = useState<string>('')
   const [newProductDescription, setNewProductDescription] = useState<string>('')
-  const [newImage, setNewImage] = useState<string | ArrayBuffer | null>('')
-  const [newTypes, setnewTypes] = useState<string>('')
+  const [newImage, setNewImage] = useState<string | ArrayBuffer>('')
+  const [newTypes, setNewTypes] = useState<string>('')
   const [newPrice, setNewPrice] = useState<number>(0)
   const [newStockQuantity, setNewStockQuantity] = useState<number>(0)
 
@@ -28,6 +28,13 @@ export const CreateProduct = () => {
       navigate('/')
     } catch (err) {
       console.log(err)
+    } finally {
+      setNewProductName('')
+      setNewProductDescription('')
+      setNewImage('')
+      setNewTypes('')
+      setNewPrice(0)
+      setNewStockQuantity(0)
     }
   }
 
@@ -54,7 +61,7 @@ export const CreateProduct = () => {
     }
   }
 
-  return (
+
     <div className="min-h-screen flex justify-center items-center bg-allPageBg bg-cover ">
       <div className="relative space-y-3 rounded-md bg-white bg-opacity-80 p-6 shadow-xl lg:p-10 border border-gray-100 mt-56 mb-36">
         <form className="grid grid-cols-1" onSubmit={handleSubmit}>
@@ -62,6 +69,7 @@ export const CreateProduct = () => {
             <label>Product Name : </label>
             <input
               type="text"
+              value={newProductDescription}
               className="mt-2 h-12 w-full rounded-md bg-gray-100 px-3 outline-none focus:ring"
               onChange={(e) => setNewProductName(e.target.value)}
               required
@@ -113,6 +121,7 @@ export const CreateProduct = () => {
             <input
               className="mt-2 h-12 w-full rounded-md bg-gray-100 px-3 outline-none focus:ring"
               type="number"
+              value={newStockQuantity}
               onChange={(e) => setNewStockQuantity(e.target.valueAsNumber)}
               required
             />
