@@ -13,6 +13,7 @@ import Navbar from './components/Navbar'
 import useProfile from './hooks/userProfile'
 import { IUserDTO } from './types/dto'
 import TrackingHistory from './pages/TrackingHistory'
+import Success from './pages/Success'
 
 function App() {
   const coffeeBeanRef = useRef<HTMLDivElement | null>(null)
@@ -55,6 +56,7 @@ function App() {
         </Route>
 
         <Route path="/tracking" element={<TrackingHistory />} />
+        <Route path="/success" element={<Success />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/create" element={<CreateProduct />} />
         <Route path="/profile" element={<Profile userInfo={profile as IUserDTO} />} />
