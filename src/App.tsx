@@ -50,18 +50,20 @@ function App() {
           path="/"
           element={<Home coffeeBeanRef={coffeeBeanRef} equipmentRef={equipmentRef} footerRef={footerRef} />}
         />
+        <Route path="/cart" element={<Cart />} />
+
         <Route element={<GuardedRoute isRouteAccessible={!isLoggedIn} redirectRoute="/" />}>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
         </Route>
 
-        <Route path="/tracking" element={<TrackingHistory />} />
-        <Route path="/success" element={<Success />} />
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="/create" element={<CreateProduct />} />
-        <Route path="/profile" element={<Profile userInfo={profile as IUserDTO} />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route element={<GuardedRoute isRouteAccessible={isLoggedIn} redirectRoute="/login" />}></Route>
+        <Route element={<GuardedRoute isRouteAccessible={isLoggedIn} redirectRoute="/login" />}>
+          <Route path="/tracking" element={<TrackingHistory />} />
+          <Route path="/success" element={<Success />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/create" element={<CreateProduct />} />
+          <Route path="/profile" element={<Profile userInfo={profile as IUserDTO} />} />
+        </Route>
       </Routes>
     </>
   )
