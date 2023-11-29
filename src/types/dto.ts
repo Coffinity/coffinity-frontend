@@ -65,3 +65,7 @@ export interface ItemDTO {
   productId: string
   quantity: number
 }
+export interface ICheckoutResponse {
+  message: string
+  session_id: string
+}

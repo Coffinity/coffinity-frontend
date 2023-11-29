@@ -48,7 +48,6 @@ export const Checkout = () => {
 
     try {
       await createCheckout(body)
-      alert('success')
     } catch (error) {
       alert(error)
     }
