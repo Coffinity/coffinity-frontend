@@ -27,6 +27,11 @@ export default function Register() {
     } catch (err) {
       console.log(err)
       toast.error('Username or Email already exist')
+    } finally {
+      setUsername('')
+      setPassword('')
+      setConfirmPassword('')
+      setEmail('')
     }
   }
 
@@ -41,6 +46,7 @@ export default function Register() {
         <label className=""> Username </label>
         <input
           type="text"
+          value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Username"
           className="mt-2 h-12 w-full rounded-md bg-gray-100 px-3 outline-none focus:ring"
@@ -51,6 +57,7 @@ export default function Register() {
           <label className=""> Email</label>
           <input
             type="email"
+            value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Info@example.com"
             className="mt-2 h-12 w-full rounded-md bg-gray-100 px-3 outline-none focus:ring"
@@ -61,6 +68,7 @@ export default function Register() {
           <label className=""> Password </label>
           <input
             type="password"
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="******"
             className="mt-2 h-12 w-full rounded-md bg-gray-100 px-3 outline-none focus:ring"
@@ -71,6 +79,7 @@ export default function Register() {
           <label className=""> Confirm Password </label>
           <input
             type="password"
+            value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             placeholder="******"
             className="mt-2 h-12 w-full rounded-md bg-gray-100 px-3 outline-none focus:ring"

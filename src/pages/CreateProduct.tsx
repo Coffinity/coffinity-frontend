@@ -7,8 +7,8 @@ export const CreateProduct = () => {
   const navigate = useNavigate()
   const [newProductName, setNewProductName] = useState<string>('')
   const [newProductDescription, setNewProductDescription] = useState<string>('')
-  const [newImage, setNewImage] = useState<string | ArrayBuffer | null>('')
-  const [newTypes, setnewTypes] = useState<string>('')
+  const [newImage, setNewImage] = useState<string | ArrayBuffer>('')
+  const [newTypes, setNewTypes] = useState<string>('')
   const [newPrice, setNewPrice] = useState<number>(0)
   const [newStockQuantity, setNewStockQuantity] = useState<number>(0)
 
@@ -28,6 +28,13 @@ export const CreateProduct = () => {
       navigate('/')
     } catch (err) {
       console.log(err)
+    } finally {
+      setNewProductName('')
+      setNewProductDescription('')
+      setNewImage('')
+      setNewTypes('')
+      setNewPrice(0)
+      setNewStockQuantity(0)
     }
   }
 
@@ -58,16 +65,21 @@ export const CreateProduct = () => {
     <div className="">
       <form className="h-screen flex justify-center items-center bg-cover" onSubmit={handleSubmit}>
         <label>Product Name</label>
-        <input type="text" onChange={(e) => setNewProductName(e.target.value)} required />
+        <input type="text" value={newProductName} onChange={(e) => setNewProductName(e.target.value)} required />
         <label>Product Description</label>
-        <input type="text" onChange={(e) => setNewProductDescription(e.target.value)} required />
+        <input
+          type="text"
+          value={newProductDescription}
+          onChange={(e) => setNewProductDescription(e.target.value)}
+          required
+        />
         <label>Image</label>
         <input type="file" accept="image/" onChange={handleProductImageUpload} required />
 
         <select
           className="select select-bordered w-full max-w-xs"
           defaultValue={newTypes}
-          onChange={(e) => setnewTypes(e.target.value)}
+          onChange={(e) => setNewTypes(e.target.value)}
           required
         >
           <option value={newTypes} disabled selected>
@@ -78,9 +90,14 @@ export const CreateProduct = () => {
         </select>
 
         <label>Price</label>
-        <input type="number" onChange={(e) => setNewPrice(e.target.valueAsNumber)} required />
+        <input type="number" value={newPrice} onChange={(e) => setNewPrice(e.target.valueAsNumber)} required />
         <label>Quantity</label>
-        <input type="number" onChange={(e) => setNewStockQuantity(e.target.valueAsNumber)} required />
+        <input
+          type="number"
+          value={newStockQuantity}
+          onChange={(e) => setNewStockQuantity(e.target.valueAsNumber)}
+          required
+        />
         <div>
           {newImage ? (
             <div>

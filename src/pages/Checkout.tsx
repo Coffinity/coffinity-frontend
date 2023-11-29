@@ -50,6 +50,15 @@ export const Checkout = () => {
       await createCheckout(body)
     } catch (error) {
       alert(error)
+    } finally {
+      setState({
+        fullname: '',
+        addressLine: '',
+        province: '',
+        district: '',
+        postcode: '',
+        phoneNumber: '',
+      })
     }
   }
 
@@ -77,49 +86,61 @@ export const Checkout = () => {
                     type="text"
                     id="fullname"
                     name="fullname"
+                    value={state.fullname}
                     className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                     placeholder="Full Name"
                     onChange={handleChange}
+                    required
                   />
                   <input
                     type="text"
                     id="addressLine"
                     name="addressLine"
+                    value={state.addressLine}
                     className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                     placeholder="Address_Line"
                     onChange={handleChange}
+                    required
                   />
                   <input
                     type="text"
                     id="district"
                     name="district"
+                    value={state.district}
                     className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                     placeholder="District"
                     onChange={handleChange}
+                    required
                   />
                   <input
                     type="text"
                     id="province"
                     name="province"
+                    value={state.province}
                     className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                     placeholder="Province"
                     onChange={handleChange}
+                    required
                   />
                   <input
                     type="text"
                     id="postcode"
                     name="postcode"
+                    value={state.postcode}
                     className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                     placeholder="Postcode"
                     onChange={handleChange}
+                    required
                   />
                   <input
                     type="text"
                     id="phoneNumber"
                     name="phoneNumber"
+                    value={state.phoneNumber}
                     className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                     placeholder="Phone_Number"
                     onChange={handleChange}
+                    required
                   />
                 </div>
               </div>
