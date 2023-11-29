@@ -48,3 +48,20 @@ export interface IProductDTO {
   createdAt: Date
   updatedAt: Date
 }
+
+export interface ICreateCheckoutDTO {
+  items: ItemDTO[]
+  address: AddressDTO
+}
+export interface AddressDTO {
+  fullname: string
+  address_line: string
+  province: string
+  district: string
+  postcode: string
+  phone_number: string
+}
+export interface ItemDTO {
+  productId: string
+  quantity: number
+}
