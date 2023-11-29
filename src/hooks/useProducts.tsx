@@ -32,7 +32,7 @@ const useProducts = () => {
       })
       console.log(res.data)
     } catch (err) {
-      throw new Error('Cannot create content')
+      throw new Error('Cannot create product')
     }
   }
 

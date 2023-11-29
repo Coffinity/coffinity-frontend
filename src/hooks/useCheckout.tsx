@@ -20,7 +20,7 @@ const useCheckout = () => {
       console.log(res.data)
       stripe.redirectToCheckout({ sessionId: res.data.session_id })
     } catch (err) {
-      throw new Error('Cannot create content')
+      throw new Error('Cannot Checkout')
     } finally {
       setIsLoading(false)
     }
