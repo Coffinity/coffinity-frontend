@@ -40,7 +40,7 @@ export const Cart = () => {
           </div>
 
           <div className="my-8 ">
-            <div className="rounded-md w-[900px] ">
+            <div className="rounded-md w-[900px] max-md:w-[550px]">
               <div className="w-full">
                 <div className="flow-root">
                   <ul className="">

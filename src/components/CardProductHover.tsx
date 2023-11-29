@@ -22,9 +22,9 @@ export const CardProductHover: FC<IProductProps> = ({ cardProductHover }) => {
     <div className="relative m-10 flex w-full h-max max-w-xs flex-col overflow-hidden rounded-lg bg-transparent shadow-[0_0_50px_0 rgb(0 0 0 / 0.1)">
       <div className="w-full group">
         <div className="">
-          <a className="flex flex-cols rounded-xl items-center" href="#">
+          <div className="flex flex-cols rounded-xl items-center">
             <img className="w-full h-[270px] object-fill" src={cardProductHover.image} alt="product image" />
-          </a>
+          </div>
         </div>
         <div className="absolute w-full bg-black/80 flex flex-col items-center justify-center top-0 h-[270px] rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300">
           <h1 className="font-bold text-white text-lg">BALANCE</h1>
@@ -35,10 +35,10 @@ export const CardProductHover: FC<IProductProps> = ({ cardProductHover }) => {
       </div>
 
       <div className="mt-4 px-5 pb-5 flex flex-col text-center">
-        <a href="#">
+        <div>
           <h5 className="text-xl font-bold tracking-tight text-slate-900">{cardProductHover.name}</h5>
           <p className="text-green-500">Instocks</p>
-        </a>
+        </div>
         <div className="mt-2 mb-5 flex flex-col items-center">
           <p>
             <span className="text-3xl font-bold text-slate-900">{cardProductHover.price} ฿</span>

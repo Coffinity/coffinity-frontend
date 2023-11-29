@@ -6,6 +6,7 @@ import PersonIcon from '@mui/icons-material/Person'
 import { CartContext } from '../providers/CartProvider'
 import { Link } from 'react-router-dom'
 import toast from 'react-hot-toast'
+import MenuIcon from '@mui/icons-material/Menu'
 
 interface Props {
   onCoffeeBeanCick: () => void
@@ -31,64 +32,72 @@ const Navbar: FC<Props> = ({ onCoffeeBeanCick, onEquipmentClick, onFooterClick }
     nevigate.pathname == '/profile'
   return (
     <div>
-      <div className="navbar w-full z-50 fixed bg-black text-neutral-content bg-opacity-50 justify-between">
-        <div className="flex">
+      <div className="navbar w-full z-50 fixed bg-black text-neutral-content bg-opacity-50 justify-between max-md:pr-20">
+        <div className="flex ">
           <Link to="/">
             <h1 className="text-white m-5 font-kanit text-4xl">ดัมมะชาติ</h1>
           </Link>
-          <div className="flex py-10 mt-13">
-            <Link to="/">
-              <button className="hover:text-white px-5">HOME</button>
-            </Link>
-
-            {!isShow && (
-              <div>
-                <button className="hover:text-white px-5" onClick={onCoffeeBeanCick}>
-                  COFFEE
-                </button>
-                <button className="hover:text-white px-5" onClick={onEquipmentClick}>
-                  EQUIPMENT
-                </button>
-                <button className="hover:text-white px-5" onClick={onFooterClick}>
-                  CONTACT
-                </button>
-              </div>
-            )}
+          <div className=" flex py-10 mt-13 ">
+            <div className="hidden md:block">
+              <Link to="/">
+                <button className="hover:text-white px-5">HOME</button>
+              </Link>
+            </div>
+            <div className="hidden md:block">
+              {!isShow && (
+                <div>
+                  <button className="hover:text-white px-5" onClick={onCoffeeBeanCick}>
+                    COFFEE
+                  </button>
+                  <button className="hover:text-white px-5" onClick={onEquipmentClick}>
+                    EQUIPMENT
+                  </button>
+                  <button className="hover:text-white px-5" onClick={onFooterClick}>
+                    CONTACT
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
         <div className="flex ">
           <div className="flex gap-10 items-start  ">
-            <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
-            {/* <SearchIcon fontSize="large" className="text-white large " /> */}
-
+            <div className="hidden md:block">
+              <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
+              {/* <SearchIcon fontSize="large" className="text-white large " /> */}
+            </div>
             <Link to="/cart">
               <LocalMallIcon sx={{ fontSize: 40 }} className="text-white text-5xl item-center absolute" />
               <div className="badge relative left-5 top-0 bg-red-600 text-white border-white">
                 {cartState.cartList.length}
               </div>
             </Link>
-          </div>
-
-          {isLoggedIn ? (
-            <>
-              <Link to="/profile">
-                <PersonIcon sx={{ fontSize: 45 }} className="ml-5 text-white text-5xl item-center" />
-              </Link>
-              <button className="text-white mx-5" onClick={handleLogout}>
-                Log out
-              </button>
-            </>
-          ) : (
-            <div className="flex">
-              <Link to="/register">
-                <p className="text-white mx-10">REGISTER</p>
-              </Link>
-              <p className="text-white">/</p>
-              <Link to="/login">
-                <p className="text-white mx-10">SIGN IN</p>
-              </Link>
+            <div className="md:hidden">
+              <MenuIcon sx={{ fontSize: 40 }} className="text-white text-5xl item-center absolute" />
             </div>
-          )}
+          </div>
+          <div className="hidden md:block">
+            {isLoggedIn ? (
+              <>
+                <Link to="/profile">
+                  <PersonIcon sx={{ fontSize: 45 }} className="ml-10 text-white text-5xl item-center" />
+                </Link>
+                <button className="text-white mx-5" onClick={handleLogout}>
+                  Log out
+                </button>
+              </>
+            ) : (
+              <div className="flex">
+                <Link to="/register">
+                  <p className="text-white mx-10">REGISTER</p>
+                </Link>
+                <p className="text-white">/</p>
+                <Link to="/login">
+                  <p className="text-white mx-10">SIGN IN</p>
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

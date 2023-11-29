@@ -11,8 +11,8 @@ interface Props {
 const Footer: FC<Props> = ({ footerRef }) => {
   return (
     <footer ref={footerRef} className="bg-footerTexture py-10">
-      <div className="flex w-full gap-x-20 items-center justify-between">
-        <div className="w-1/2">
+      <div className="flex w-full gap-x-20 items-center justify-between ">
+        <div className="w-1/2 ">
           <img src="assets/logo.png" className="mx-auto h-64 w-64" />
         </div>
         <div className="flex items-center">
@@ -20,8 +20,8 @@ const Footer: FC<Props> = ({ footerRef }) => {
         </div>
 
         <div className="w-1/2">
-          <h1 className="pl-20 text-3xl mb-5 font-semibold text-white">CONTACT US</h1>
-          <div className="pl-20">
+          <h1 className="pl-20 text-3xl mb-5 font-semibold text-white max-md:pl-5">CONTACT US</h1>
+          <div className="pl-20 max-md:pl-5">
             <div className="flex gap-5 mb-5 items-center">
               <PhoneIcon sx={{ fontSize: 30 }} className="text-white" />
               <p className="text-[#AAAAAA]">084-961-4154</p>

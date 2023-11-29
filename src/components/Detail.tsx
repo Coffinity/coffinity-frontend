@@ -19,9 +19,9 @@ export default function Detail() {
         <img src="assets/Header2.png" />
       </div>
 
-      <div className="flex flex-col gap-y-[152px]">
+      <div className="flex flex-col gap-y-[152px] max-md:gap-y-0">
         <div className="flex flex-col items-center">
-          <div className="flex w-full justify-between items-center max-w-[1020px]    ">
+          <div className="flex w-full justify-between items-center max-w-[1020px]   max-md:flex-col-reverse ">
             <div className="h-[320px] text-center text-black text-3xl font-bold italic place-items-center flex items-center">
               The purpose of our lives
               <br /> is wake up to
@@ -34,10 +34,10 @@ export default function Detail() {
           </div>
         </div>
         <div className="flex flex-col items-center">
-          <div className="flex w-full justify-between items-center max-w-[1020px]">
+          <div className="flex w-full justify-between items-center max-w-[1020px] max-md:flex-col">
             <img src="assets/Brew.png" className="w-[450px] h-[450px] place-items-center flex items-center" />
             <div className="flex flex-col">
-              <div className="text-stone-600 text-[30px] font-bold  tracking-[9.60px] place-items-center ">
+              <div className="text-stone-600 text-[30px] font-bold  tracking-[9.60px] place-items-center max-md:mt-10 ">
                 DHAMAJATI
                 <br />
               </div>
@@ -45,7 +45,7 @@ export default function Detail() {
                 ROASTER
               </div>
 
-              <div className=" text-black text-[20px] font-normal indent-[70px] place-items-center ">
+              <div className=" text-black text-[20px] font-normal indent-[70px] place-items-center max-md:mb-10">
                 There are many different varieties of
                 <br /> coffee beans in the world from many places
                 <br /> of cultivation. Ripe red fruit from the coffee

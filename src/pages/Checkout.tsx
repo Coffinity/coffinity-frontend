@@ -71,7 +71,7 @@ export const Checkout = () => {
 
   return (
     <div className="min-h-screen pt-24 bg-allPageBg bg-cover bg-center bg-no-repeat flex flex-col items-center  ">
-      <div className="flex gap-10">
+      <div className="flex gap-10 max-md:flex-col-reverse ">
         <div className="">
           <div className="flex my-10">
             <h1 className="text-3xl text-white font-bold">CHECK OUT</h1>
