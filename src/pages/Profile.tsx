@@ -11,7 +11,12 @@ export const Profile = () => {
         {isLoading ? (
           <span className="loading loading-spinner loading-lg"></span>
         ) : (
-          <div className="relative w-1/2 bg-white shadow-xl p-10 rounded-md bg-opacity-80 mt-52 mb-28 text-black border border-gray-100">
+          <div
+            data-aos="fade-up"
+            data-aos-delay={100}
+            data-aos-duration="600"
+            className="relative w-1/2 bg-white shadow-xl p-10 rounded-md bg-opacity-80 mt-52 mb-28 text-black border border-gray-100"
+          >
             <h1 className="text-xl font-semibold lg:text-2xl flex items-center justify-center">ACCOUNT DETAILS</h1>
             <div className="flex gap-5 text-gray-700  justify-center  mt-3 pb-4">
               <div className="flex ">

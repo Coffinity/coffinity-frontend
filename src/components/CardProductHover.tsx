@@ -27,7 +27,7 @@ export const CardProductHover: FC<IProductProps> = ({ cardProductHover }) => {
           </div>
         </div>
         <div className="absolute w-full bg-black/80 flex flex-col items-center justify-center top-0 h-[270px] rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300">
-          <h1 className="font-bold text-white text-lg">BALANCE</h1>
+          <h1 className="font-bold text-white text-lg">PRODUCT</h1>
           <br />
           <h3 className="font-semibold text-white">Description :</h3>
           <p className="text-white text-sm">{cardProductHover.description}</p>

@@ -35,6 +35,9 @@ export default function Login() {
       ) : (
         <form
           onSubmit={handleSubmit}
+          data-aos="fade-up"
+          data-aos-delay={100}
+          data-aos-duration="600"
           className="relative space-y-3 rounded-md bg-white bg-opacity-80 p-6 shadow-xl lg:p-10 border border-gray-100  text-black"
         >
           <h1 className="text-xl font-semibold lg:text-2xl flex items-center">SIGN IN</h1>
