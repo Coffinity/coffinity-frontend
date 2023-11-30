@@ -71,12 +71,19 @@ export const Checkout = () => {
   }
 
   return (
+
     <div className="min-h-screen justify-center items-center bg-allPageBg bg-cover ">
       {isLoading ? (
         <span className="loading loading-spinner loading-lg"></span>
       ) : (
         <div className="pt-24 flex flex-col items-center">
           <div className="flex gap-10 max-md:flex-col-reverse ">
+      <div
+        data-aos="fade-up"
+        data-aos-delay={100}
+        data-aos-duration="600"
+        className="flex gap-10 max-md:flex-col-reverse "
+      >
             <div className="">
               <div className="flex my-10">
                 <h1 className="text-3xl text-white font-bold">CHECK OUT</h1>

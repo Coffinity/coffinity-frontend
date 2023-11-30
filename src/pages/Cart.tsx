@@ -37,13 +37,17 @@ export const Cart = () => {
       {isLoading ? (
         <span className="loading loading-spinner loading-lg"></span>
       ) : (
-        <section className="relative mt-56 mb-36 rounded-md bg-white bg-opacity-80 p-6 lg:p-10 border border-gray-100">
-          {/* relative w-1/2 bg-white shadow-xl p-10 rounded-md bg-opacity-80 mt-52 mb-28 text-black border border-gray-100 */}
-          <div className="">
-            <div className="flex items-center justify-center">
-              <h1 className="text-xl font-semibold lg:text-2xl flex items-center text-black">YOUR CART</h1>
-            </div>
-
+      <section
+        data-aos="fade-up"
+        data-aos-delay={100}
+        data-aos-duration="600"
+        className="relative mt-56 mb-36 rounded-md bg-white bg-opacity-80 p-6 lg:p-10 border border-gray-100"
+      >
+        {/* relative w-1/2 bg-white shadow-xl p-10 rounded-md bg-opacity-80 mt-52 mb-28 text-black border border-gray-100 */}
+        <div className="">
+          <div className="flex items-center justify-center">
+            <h1 className="text-xl font-semibold lg:text-2xl flex items-center text-black">YOUR CART</h1>
+          </div>
             <div className="my-8 ">
               <div className="rounded-md w-[900px] max-md:w-[550px]">
                 <div className="w-full">
