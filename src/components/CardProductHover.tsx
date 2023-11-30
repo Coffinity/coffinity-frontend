@@ -30,7 +30,7 @@ export const CardProductHover: FC<IProductProps> = ({ cardProductHover }) => {
           <h1 className="font-bold text-white text-lg">PRODUCT</h1>
           <br />
           <h3 className="font-semibold text-white">Description :</h3>
-          <p className="text-white text-sm">{cardProductHover.description}</p>
+          <p className="text-white text-sm px-4">{cardProductHover.description}</p>
         </div>
       </div>
 
