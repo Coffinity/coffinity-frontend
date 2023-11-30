@@ -14,6 +14,7 @@ import TrackingHistory from './pages/TrackingHistory'
 import Success from './pages/Success'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import ScrollTop from './components/ScrollTop'
 
 function App() {
   const coffeeBeanRef = useRef<HTMLDivElement | null>(null)
@@ -48,6 +49,7 @@ function App() {
   return (
     <>
       <Navbar onCoffeeBeanCick={onCoffeeBeanClick} onEquipmentClick={onEquipmentClick} onFooterClick={onFooterClick} />
+      <ScrollTop />
       <Routes>
         <Route
           path="/"
