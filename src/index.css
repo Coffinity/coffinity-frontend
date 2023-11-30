@@ -7,3 +7,12 @@ body {
   background-color: #ededed;
   margin: 0;
 }
+
+@layer utilities {
+  .nav::after {
+    @apply content-[''] bg-red-600 h-[3px] w-[0%] duration-300 left-0 -bottom-[5px] rounded-xl absolute;
+  }
+  .nav:hover::after {
+    @apply w-[100%];
+  }
+}
