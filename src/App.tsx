@@ -12,6 +12,7 @@ import { Checkout } from './pages/Checkout'
 import Navbar from './components/Navbar'
 import TrackingHistory from './pages/TrackingHistory'
 import Success from './pages/Success'
+import ScrollTop from './components/ScrollTop'
 
 function App() {
   const coffeeBeanRef = useRef<HTMLDivElement | null>(null)
@@ -42,6 +43,7 @@ function App() {
   return (
     <>
       <Navbar onCoffeeBeanCick={onCoffeeBeanClick} onEquipmentClick={onEquipmentClick} onFooterClick={onFooterClick} />
+      <ScrollTop />
       <Routes>
         <Route
           path="/"
