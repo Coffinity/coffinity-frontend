@@ -11,7 +11,13 @@ interface Props {
 const Footer: FC<Props> = ({ footerRef }) => {
   return (
     <footer ref={footerRef} className="bg-footerTexture py-10">
-      <div className="flex w-full gap-x-20 items-center justify-between ">
+      <div
+        data-aos="fade-up"
+        data-aos-delay={100}
+        data-aos-offset={2100}
+        data-aos-duration="1000"
+        className="flex w-full gap-x-20 items-center justify-between "
+      >
         <div className="w-1/2 ">
           <img src="assets/logo.png" className="mx-auto h-64 w-64" />
         </div>
@@ -45,7 +51,13 @@ const Footer: FC<Props> = ({ footerRef }) => {
           </div>
         </div>
       </div>
-      <div className="flex place-content-center mt-5">
+      <div
+        data-aos="fade-up"
+        data-aos-delay={100}
+        data-aos-offset={1800}
+        data-aos-duration="1000"
+        className="flex place-content-center mt-5"
+      >
         <p className="text-[#AAAAAA]">Copyright © 2020 Dharmajati</p>
       </div>
     </footer>

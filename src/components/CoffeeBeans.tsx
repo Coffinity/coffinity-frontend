@@ -22,10 +22,15 @@ const CoffeeBeans: FC<Props> = ({ coffeeBeanRef }) => {
 
   return (
     <div ref={coffeeBeanRef} className=" bg-[#ededed]">
-      <div className="flex justify-center bg-[#ededed]">
+      <div
+        data-aos="fade-up"
+        data-aos-delay={100}
+        data-aos-duration="1000"
+        className="flex justify-center bg-[#ededed]"
+      >
         <img src="assets/CoffeeBeans.png" className="w-1/2" />
       </div>
-      <div className="w-4/5 mx-auto">
+      <div data-aos="fade-up" data-aos-delay={100} data-aos-duration="1000" className="w-4/5 mx-auto">
         <h1 className="font-bold text-[30px] text-[#585252]">HOUSE BLEND</h1>
         <CustomCarousel>
           {filteredProducts.map((items, index) => (
@@ -33,7 +38,13 @@ const CoffeeBeans: FC<Props> = ({ coffeeBeanRef }) => {
           ))}
         </CustomCarousel>
       </div>
-      <div className="w-4/5 mx-auto">
+      <div
+        data-aos="fade-up"
+        data-aos-delay={100}
+        data-aos-offset={800}
+        data-aos-duration="1000"
+        className="w-4/5 mx-auto"
+      >
         <h1 className="font-bold text-[30px] text-[#585252]">SINGLE ORIGIN</h1>
         <CustomCarousel>
           {filteredProducts.map((items, index) => (

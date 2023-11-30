@@ -23,9 +23,22 @@ const Equipment: FC<Props> = ({ equipmentRef }) => {
   return (
     <div ref={equipmentRef} className=" bg-[#D5D5D5]">
       <div className="flex justify-center bg-[#D5D5D5]">
-        <img src="assets/equipmentsBanner.png" className="w-1/2" />
+        <img
+          src="assets/equipmentsBanner.png"
+          data-aos="fade-up"
+          data-aos-delay={100}
+          data-aos-offset={1500}
+          data-aos-duration="1000"
+          className="w-1/2"
+        />
       </div>
-      <div className="flex w-4/5 mx-auto">
+      <div
+        data-aos="fade-up"
+        data-aos-delay={100}
+        data-aos-offset={1500}
+        data-aos-duration="1000"
+        className="flex w-4/5 mx-auto"
+      >
         <CustomCarousel>
           {equipmentProducts.map((items, index) => (
             <AllCardProductHover items={items} key={index} />
