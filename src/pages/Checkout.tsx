@@ -38,7 +38,7 @@ export const Checkout = () => {
     const { fullname, addressLine, province, district, postcode, phoneNumber } = state
     const items = cartList.map(transformToObject)
     const address: AddressDTO = {
-      fullname,
+      fullName: fullname,
       address_line: addressLine,
       province,
       district,

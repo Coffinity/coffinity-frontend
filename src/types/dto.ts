@@ -54,7 +54,7 @@ export interface ICreateCheckoutDTO {
   address: AddressDTO
 }
 export interface AddressDTO {
-  fullname: string
+  fullName: string
   address_line: string
   province: string
   district: string
