@@ -4,6 +4,7 @@ import Detail from '../components/Detail'
 import CoffeeBeans from '../components/CoffeeBeans'
 import Equipment from '../components/Equipment'
 import Footer from '../components/Footer'
+import useProfile from '../hooks/userProfile'
 
 interface Props {
   coffeeBeanRef: React.MutableRefObject<HTMLDivElement | null>
@@ -12,13 +13,23 @@ interface Props {
 }
 
 export const Home: FC<Props> = ({ coffeeBeanRef, equipmentRef, footerRef }) => {
+  const { isLoading } = useProfile()
+
   return (
-    <div>
-      <Header />
-      <Detail />
-      <CoffeeBeans coffeeBeanRef={coffeeBeanRef} />
-      <Equipment equipmentRef={equipmentRef} />
-      <Footer footerRef={footerRef} />
-    </div>
+    <>
+      {isLoading ? (
+        <div className="min-h-screen flex justify-center items-center bg-allPageBg bg-cover ">
+          <span className="loading loading-spinner loading-lg"></span>
+        </div>
+      ) : (
+        <>
+          <Header />
+          <Detail />
+          <CoffeeBeans coffeeBeanRef={coffeeBeanRef} />
+          <Equipment equipmentRef={equipmentRef} />
+          <Footer footerRef={footerRef} />
+        </>
+      )}
+    </>
   )
 }

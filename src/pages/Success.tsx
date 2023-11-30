@@ -1,41 +1,48 @@
 import { Link } from 'react-router-dom'
+import useCheckout from '../hooks/useCheckout'
 
 export default function Success() {
+  const { isLoading } = useCheckout()
+
   return (
     <div className="h-screen flex justify-center items-center bg-allPageBg bg-cover ">
-      <div className="bg-white bg-opacity-80 rounded-lg p-6  md:mx-auto">
-        <svg viewBox="0 0 24 24" className="text-green-600 w-16 h-16 mx-auto my-6">
-          <path
-            fill="currentColor"
-            d="M12,0A12,12,0,1,0,24,12,12.014,12.014,0,0,0,12,0Zm6.927,8.2-6.845,9.289a1.011,1.011,0,0,1-1.43.188L5.764,13.769a1,1,0,1,1,1.25-1.562l4.076,3.261,6.227-8.451A1,1,0,1,1,18.927,8.2Z"
-          ></path>
-        </svg>
-        <div className="text-center">
-          <h3 className="md:text-2xl text-base text-gray-900 font-semibold text-center">Payment Done!</h3>
-          <p className="text-gray-600 my-2">Thank you for completing your secure online payment.</p>
-          <p> Have a great day! </p>
-          <div className="mt-6 text-center">
-            <Link to="/">
-              <button
-                type="button"
-                className="group inline-flex w-full items-center justify-center rounded-md bg-black px-6 py-4 text-lg font-semibold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-500"
-              >
-                GO HOME
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="group-hover:ml-8 ml-4 h-6 w-6 transition-all"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2"
+      {isLoading ? (
+        <span className="loading loading-spinner loading-lg"></span>
+      ) : (
+        <div className="bg-white bg-opacity-80 rounded-lg p-6  md:mx-auto">
+          <svg viewBox="0 0 24 24" className="text-green-600 w-16 h-16 mx-auto my-6">
+            <path
+              fill="currentColor"
+              d="M12,0A12,12,0,1,0,24,12,12.014,12.014,0,0,0,12,0Zm6.927,8.2-6.845,9.289a1.011,1.011,0,0,1-1.43.188L5.764,13.769a1,1,0,1,1,1.25-1.562l4.076,3.261,6.227-8.451A1,1,0,1,1,18.927,8.2Z"
+            ></path>
+          </svg>
+          <div className="text-center">
+            <h3 className="md:text-2xl text-base text-gray-900 font-semibold text-center">Payment Done!</h3>
+            <p className="text-gray-600 my-2">Thank you for completing your secure online payment.</p>
+            <p> Have a great day! </p>
+            <div className="mt-6 text-center">
+              <Link to="/">
+                <button
+                  type="button"
+                  className="group inline-flex w-full items-center justify-center rounded-md bg-black px-6 py-4 text-lg font-semibold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-500"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </button>
-            </Link>
+                  GO HOME
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="group-hover:ml-8 ml-4 h-6 w-6 transition-all"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }
