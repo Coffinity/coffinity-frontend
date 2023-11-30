@@ -32,7 +32,12 @@ export const Cart = () => {
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-allPageBg bg-cover">
-      <section className="relative mt-56 mb-36 rounded-md bg-white bg-opacity-80 p-6 lg:p-10 border border-gray-100">
+      <section
+        data-aos="fade-up"
+        data-aos-delay={100}
+        data-aos-duration="600"
+        className="relative mt-56 mb-36 rounded-md bg-white bg-opacity-80 p-6 lg:p-10 border border-gray-100"
+      >
         {/* relative w-1/2 bg-white shadow-xl p-10 rounded-md bg-opacity-80 mt-52 mb-28 text-black border border-gray-100 */}
         <div className="">
           <div className="flex items-center justify-center">

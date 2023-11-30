@@ -1,5 +1,5 @@
 import { CreateProduct } from './pages/CreateProduct'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { Home } from './pages/Home'
 import GuardedRoute from './guard/GuardedRoute'
 import { useAuth } from './providers/AuthProvider'
@@ -12,11 +12,17 @@ import { Checkout } from './pages/Checkout'
 import Navbar from './components/Navbar'
 import TrackingHistory from './pages/TrackingHistory'
 import Success from './pages/Success'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function App() {
   const coffeeBeanRef = useRef<HTMLDivElement | null>(null)
   const equipmentRef = useRef<HTMLDivElement | null>(null)
   const footerRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    AOS.init()
+  }, [])
 
   const onCoffeeBeanClick = () => {
     scrollToElement(coffeeBeanRef.current)
