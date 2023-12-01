@@ -32,27 +32,27 @@ const Navbar: FC<Props> = ({ onCoffeeBeanCick, onEquipmentClick, onFooterClick }
     nevigate.pathname == '/profile'
   return (
     <div>
-      <div className="navbar w-full z-50 fixed bg-black text-neutral-content bg-opacity-50 justify-between max-md:pr-20">
+      <div className="navbar w-full z-50 fixed  text-neutral-content bg-black bg-opacity-50 justify-between max-md:pr-20 ">
         <div className="flex ">
           <Link to="/">
             <h1 className="text-white m-5 font-kanit text-4xl">ดัมมะชาติ</h1>
           </Link>
-          <div className=" flex py-10 mt-13 ">
+          <div className="flex py-10 mt-13">
             <div className="hidden md:block">
-              <Link to="/">
-                <button className="hover:text-white px-5">HOME</button>
+              <Link className=" " to="/">
+                <button className="hover:text-white ml-10 relative nav">HOME</button>
               </Link>
             </div>
             <div className="hidden md:block">
               {!isShow && (
                 <div>
-                  <button className="hover:text-white px-5" onClick={onCoffeeBeanCick}>
+                  <button className="hover:text-white ml-10 relative nav" onClick={onCoffeeBeanCick}>
                     COFFEE
                   </button>
-                  <button className="hover:text-white px-5" onClick={onEquipmentClick}>
+                  <button className="hover:text-white ml-10 relative nav" onClick={onEquipmentClick}>
                     EQUIPMENT
                   </button>
-                  <button className="hover:text-white px-5" onClick={onFooterClick}>
+                  <button className="hover:text-white ml-10 relative nav" onClick={onFooterClick}>
                     CONTACT
                   </button>
                 </div>
@@ -89,11 +89,11 @@ const Navbar: FC<Props> = ({ onCoffeeBeanCick, onEquipmentClick, onFooterClick }
             ) : (
               <div className="flex">
                 <Link to="/register">
-                  <p className="text-white mx-10">REGISTER</p>
+                  <p className="text-white mx-10 relative nav">REGISTER</p>
                 </Link>
                 <p className="text-white">/</p>
                 <Link to="/login">
-                  <p className="text-white mx-10">SIGN IN</p>
+                  <p className="text-white mx-10 relative nav">SIGN IN</p>
                 </Link>
               </div>
             )}

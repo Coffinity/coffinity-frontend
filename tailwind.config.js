@@ -5,7 +5,7 @@ export default {
     extend: {
       backgroundImage: {
         footerTexture: "url('/assets/footerBackground.png')",
-        header: 'url("/assets/Header.jpg")',
+        videoBg: "url('/assets/videocoffee.mp4)",
         allPageBg: 'url("/assets/BGpage.jpg")',
       },
       fontFamily: {
