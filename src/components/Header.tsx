@@ -1,10 +1,8 @@
 export default function Header() {
   return (
-
     <div className="min-h-screen bg-videoBg bg-cover items-center flex justify-end relative ">
-      <div className="">
-        <video className="" src="/public/assets/videocoffee1.mp4" autoPlay loop muted />
-      </div>
+      <video className="object-cover h-screen w-full" src="/assets/videocoffee1.mp4" autoPlay loop muted />
+
       <p
         data-aos="fade-up"
         data-aos-delay={100}
